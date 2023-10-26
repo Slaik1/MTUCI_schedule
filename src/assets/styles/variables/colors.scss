@@ -1,10 +1,14 @@
 :root {
   --wite: #fff;
-  --wite100: #eeeeee;
+  --wite100: #e3e3e3;
+  --wite200: #e3e3e3;
+
   --black: #000;
-  --black100: #272833;
+  --black100: #222222;
 
 
   --bg-light: var(--wite100);
+  --bg-light-component: var(--wite);
+  --border-component: var(--wite200);
   --font-balck: var(--black100);
 }
