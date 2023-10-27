@@ -8,7 +8,6 @@
   background: var(--bg-light-component);
 
   .logo_wrapper {
-    position: re;
     display: flex;
     cursor: pointer;
 
@@ -54,7 +53,7 @@
         left: 0;
         width: 100%;
         height: 2px;
-        background: #2383e8;
+        background: var(--aditional);
         opacity: 0;
         transition: transform .4s, opacity .4s;
       }

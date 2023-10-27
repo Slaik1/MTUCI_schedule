@@ -1,0 +1,23 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  .settings_list {
+    width: 100%;
+
+    .setting {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+  }
+}
