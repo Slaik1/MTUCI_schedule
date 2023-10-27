@@ -16,12 +16,26 @@
       height: 50px;
       margin-right: 20px;
       transition: all 0.3s ease;
+
+      //g {
+      //  path:nth-child(1) {
+      //    transition: all 3s ease;
+      //  fill: #ff0060;
+      //  }
+      //  g {
+      //    path {
+      //      fill: #c2bce0 !important;
+      //    }
+      //  }
+      //}
     }
 
     .title {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      transition: all 0.3s ease;
+
 
       h1 {
         font-size: 20px;
@@ -31,6 +45,15 @@
       p {
         font-size: 18px;
         font-weight: 400;
+      }
+    }
+
+    &:hover {
+      .title {
+        transform: translateX(-70px);
+      }
+      svg {
+        transform: translateX(135px);
       }
     }
   }
