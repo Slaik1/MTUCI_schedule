@@ -7,7 +7,7 @@ const Header:FC = () => {
     return (
         <header className={cl.header}>
             <div className={cl.logo_wrapper}>
-                <ReactSVG src="svg/header_logo.svg" className={cl.svg}/>
+                <ReactSVG src="svg/header_logo.svg"/>
                 <div className={cl.title}>
                     <h1>СКФ МТУСИ</h1>
                     <p>Рассписание</p>
