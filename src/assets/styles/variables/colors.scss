@@ -1,7 +1,7 @@
 :root {
   --wite: #fff;
   --wite100: #e3e3e3;
-  --wite200: #e3e3e3;
+  --wite200: #cbcbcb;
 
   --black: #000;
   --black100: #222222;
@@ -10,7 +10,8 @@
 
   --bg-light: var(--wite100);
   --bg-light-component: var(--wite);
-  --border-component: var(--wite200);
+  --border-component: var(--wite100);
+  --border-component-hover: var(--wite200);
   --font-balck: var(--black100);
   --aditional: var(--blue)
 }

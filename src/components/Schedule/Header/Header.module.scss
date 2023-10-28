@@ -16,6 +16,7 @@
       height: 50px;
       margin-right: 20px;
       transition: all 0.3s ease;
+      animation: color_switch 3s ease infinite;
 
       //g {
       //  path:nth-child(1) {
@@ -86,6 +87,23 @@
         opacity: 1;
       }
     }
+  }
+}
+
+@keyframes color_switch {
+  0%   {
+  }
+  25%  {
+
+  }
+  50%  {
+
+  }
+  75%  {
+
+  }
+  100% {
+
   }
 }
 
