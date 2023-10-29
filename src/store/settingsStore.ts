@@ -11,6 +11,8 @@ class SettingsStore {
     }
 
     setSettingsItem = <K extends keyof ISettings>(key: K, value: ISettings[K]): void => {
+        console.log('asd')
+
         this.settings[key] = value
         setStorageSettings('MTUSISchedule', this.settings)
     }

@@ -26,7 +26,6 @@ const SelectInput:FC<SelectInputProps> = ({className = '', options, value, setVa
 
     const setGlobalValue = (el: IOption) => {
         setValue(el.value)
-        setIsInputActive(false)
     }
 
     const getCurrentLabel = () => {
@@ -37,11 +36,21 @@ const SelectInput:FC<SelectInputProps> = ({className = '', options, value, setVa
         <div ref={ref}
              className={inputClasses}
              onClick={() => setIsInputActive((prev) => !prev)}>
-            <input spellCheck={false} value={getCurrentLabel()} type="text" placeholder="Отображаемое колличество дней"/>
+            <input
+                spellCheck={false}
+                value={getCurrentLabel()}
+                type="text"
+                placeholder="Отображаемое колличество дней"
+                readOnly={true}
+            />
             <ReactSVG className={cl.svg_arrow} src="./svg/input_arrow.svg"/>
             {
                 isInputActive &&
-                <DropList value={value} setValue={setGlobalValue} dropListData={options}/>
+                <DropList
+                    value={value}
+                    setValue={setGlobalValue}
+                    dropListData={options}
+                />
             }
         </div>
     );

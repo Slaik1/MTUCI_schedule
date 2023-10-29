@@ -1,4 +1,7 @@
 import {TOptions} from "../UIKit/SelectInput/selectInput.model";
+import {settingsStore} from "../../store/settingsStore";
+
+const {setSettingsItem} = settingsStore
 
 export const INPUT_DATA: TOptions = [
     {
@@ -22,3 +25,6 @@ export const INPUT_DATA: TOptions = [
         label: 'Всё рассписание'
     }
 ]
+export const inputHandler = (value: string | number) => {
+    setSettingsItem('scheduleLength', Number(value))
+}

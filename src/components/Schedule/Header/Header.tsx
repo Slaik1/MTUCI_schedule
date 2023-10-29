@@ -4,9 +4,10 @@ import { ReactSVG } from 'react-svg';
 
 interface HeaderProps {
     setIsSettingsOpen:SetAction<boolean>;
+    setIsAboutProjectOpen:SetAction<boolean>;
 }
 
-const Header:FC<HeaderProps> = ({setIsSettingsOpen}) => {
+const Header:FC<HeaderProps> = ({setIsSettingsOpen, setIsAboutProjectOpen}) => {
     return (
         <header className={cl.header}>
             <div className={cl.logo_wrapper}>
@@ -18,7 +19,7 @@ const Header:FC<HeaderProps> = ({setIsSettingsOpen}) => {
             </div>
             <ul className={cl.links_list}>
                 <li onClick={() =>setIsSettingsOpen(true)}>Настройки</li>
-                <li>О проекте</li>
+                <li onClick={() =>setIsAboutProjectOpen(true)}>О проекте</li>
             </ul>
         </header>
     );

@@ -1,11 +1,30 @@
-import React from 'react';
+import React, {FC} from 'react';
 import cl from "./SwitchBtn.module.scss"
-const SwitchBtn = () => {
+import classNames from "classnames";
+
+interface SwitchBtnProps {
+    value: boolean;
+    setValue: (value:boolean) => void;
+}
+
+const SwitchBtn:FC<SwitchBtnProps> = ({value, setValue}) => {
+
+    const inputClasses = classNames({
+        [cl.switch]:true,
+        [cl.active]:value
+    })
+
+    const labelClickHandler = (event:React.MouseEvent<HTMLDivElement>) => {
+        event.stopPropagation()
+        console.log('123')
+        setValue(!value)
+    }
+
     return (
-        <label className={cl.switch}>
-            <input type="checkbox" className={cl.checkbox}/>
-                <div className={cl.slider}></div>
-        </label>
+        <div className={inputClasses} onClick={labelClickHandler}>
+            <input type="checkbox"/>
+                <div></div>
+        </div>
     );
 };
 

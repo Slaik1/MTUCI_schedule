@@ -3,13 +3,15 @@ import cl from "./Schedule.module.scss"
 import Header from "./Header/Header";
 import Modal from "../UIKit/Modal/Modal";
 import Settings from "../Settings/Settings";
+import AboutProject from "../AboutProject/AboutProject";
 
 const Schedule = () => {
     const [isSettingsOpen, setIsSettingsOpen] = useState(false)
+    const [isAboutProjectOpen , setIsAboutProjectOpen] = useState(false)
 
     return (
         <div className={cl.wrapper}>
-            <Header setIsSettingsOpen={setIsSettingsOpen}/>
+            <Header setIsAboutProjectOpen={setIsAboutProjectOpen} setIsSettingsOpen={setIsSettingsOpen}/>
             <div className="container">
                 {/*<Table/>*/}
 
@@ -18,6 +20,12 @@ const Schedule = () => {
                 isSettingsOpen &&
                 <Modal setIsOpen={setIsSettingsOpen}>
                     <Settings/>
+                </Modal>
+            }
+            {
+                isAboutProjectOpen &&
+                <Modal setIsOpen={setIsAboutProjectOpen}>
+                    <AboutProject/>
                 </Modal>
             }
         </div>
