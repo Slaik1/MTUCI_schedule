@@ -11,9 +11,10 @@ interface SelectInputProps {
     options: TOptions;
     value: string | number;
     setValue: (value: string | number) => void;
+    title: string;
 }
 
-const SelectInput:FC<SelectInputProps> = ({className = '', options, value, setValue}) => {
+const SelectInput:FC<SelectInputProps> = ({className = '', options, value, setValue, title}) => {
 
     const [isInputActive, setIsInputActive] = useState(false)
     const ref = useOutsideClick(()=> setIsInputActive(false))
@@ -33,26 +34,26 @@ const SelectInput:FC<SelectInputProps> = ({className = '', options, value, setVa
     }
 
     return (
-        <div ref={ref}
-             className={inputClasses}
-             onClick={() => setIsInputActive((prev) => !prev)}>
-            <input
-                spellCheck={false}
-                value={getCurrentLabel()}
-                type="text"
-                placeholder="Отображаемое колличество дней"
-                readOnly={true}
-            />
-            <ReactSVG className={cl.svg_arrow} src="./svg/input_arrow.svg"/>
-            {
-                isInputActive &&
-                <DropList
-                    value={value}
-                    setValue={setGlobalValue}
-                    dropListData={options}
-                />
-            }
+        <div className={cl.container}>
+            <p className={cl.title}>{title}</p>
+            <div ref={ref}
+                 className={inputClasses}
+                 onClick={() => setIsInputActive((prev) => !prev)}>
+                <p className={cl.input}>
+                    {getCurrentLabel()}
+                </p>
+                <ReactSVG className={cl.svg_arrow} src="./svg/input_arrow.svg"/>
+                {
+                    isInputActive &&
+                    <DropList
+                        value={value}
+                        setValue={setGlobalValue}
+                        dropListData={options}
+                    />
+                }
+            </div>
         </div>
+
     );
 };
 

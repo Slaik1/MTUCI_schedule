@@ -3,4 +3,6 @@ export interface ISettings {
     highlightToday: boolean;
     expandToday: boolean;
     expandAllDays: boolean;
+    specialization: string;
+    group: string;
 }

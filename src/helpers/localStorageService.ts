@@ -8,7 +8,9 @@ export const getSettingsFromStorage = (key: string): ISettings => {
             scheduleLength: 10,
             highlightToday: true,
             expandToday: true,
-            expandAllDays: false
+            expandAllDays: false,
+            specialization: 'ivt',
+            group:'ДП-41'
         }
         setStorageSettings(key, defaultSettings)
         return defaultSettings

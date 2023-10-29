@@ -9,3 +9,5 @@ export interface IRow {
 }
 
 export type TTable = IRow[]
+
+export type TTableDataList = TTable[]
