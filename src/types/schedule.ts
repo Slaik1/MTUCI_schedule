@@ -1,6 +1,8 @@
+import {DaysOfWeek} from "../components/Schedule/Table/constants";
+
 export interface IRow {
     date: string;
-    day: string;
+    day: keyof typeof DaysOfWeek;
     discipline: string;
     lesson: string;
     room:string;

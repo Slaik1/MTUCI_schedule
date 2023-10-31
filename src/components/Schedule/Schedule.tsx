@@ -10,8 +10,7 @@ import {TTableDataList} from "../../types/schedule";
 
 const Schedule = () => {
     const [isSettingsOpen, setIsSettingsOpen] = useState(false)
-    const [isAboutProjectOpen , setIsAboutProjectOpen] = useState(false)
-
+    const [isAboutProjectOpen, setIsAboutProjectOpen] = useState(false)
     const [scheduleDataList, setScheduleDataList] = useState<TTableDataList>([]);
 
     useEffect(() => {
@@ -23,20 +22,20 @@ const Schedule = () => {
                 console.error('Ошибка при получении расписания:', error);
             }
         };
-
         getSchedule();
     }, []);
-
 
     return (
         <div className={cl.wrapper}>
             <Header setIsAboutProjectOpen={setIsAboutProjectOpen} setIsSettingsOpen={setIsSettingsOpen}/>
-            <div className="container">
+            <div className={cl.container}>
                 {
-                    scheduleDataList.map((el, i) => <Table scheduleData={el} key={i}/>)
+                    scheduleDataList
+                        ?
+                        scheduleDataList.map((el, i) => <Table scheduleData={el} key={i}/>)
+                        :
+                        <p>Не удалось загрузить рассписание. Проверьте настройки</p>
                 }
-
-
             </div>
             {
                 isSettingsOpen &&
