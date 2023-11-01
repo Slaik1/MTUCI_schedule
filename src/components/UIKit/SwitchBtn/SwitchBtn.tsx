@@ -1,6 +1,6 @@
-import React, {FC} from 'react';
-import cl from "./SwitchBtn.module.scss"
-import classNames from "classnames";
+import React, {FC} from 'react'
+import classNames from 'classnames'
+import cl from './SwitchBtn.module.scss'
 
 interface SwitchBtnProps {
     value: boolean;
@@ -22,10 +22,10 @@ const SwitchBtn:FC<SwitchBtnProps> = ({value, setValue}) => {
 
     return (
         <div className={inputClasses} onClick={labelClickHandler}>
-            <input type="checkbox"/>
-                <div></div>
+            <input type='checkbox'/>
+            <div></div>
         </div>
-    );
-};
+    )
+}
 
-export default SwitchBtn;
+export default SwitchBtn

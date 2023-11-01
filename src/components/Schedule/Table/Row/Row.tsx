@@ -1,6 +1,6 @@
-import React, {FC} from 'react';
-import {IRow} from "../../../../types/schedule";
-import cl from "./Row.module.scss"
+import React, {FC} from 'react'
+import {IRow} from '../../../../types/schedule'
+import cl from './Row.module.scss'
 interface RowProps {
     data: IRow;
 }
@@ -14,7 +14,7 @@ const Row:FC<RowProps> = ({data}) => {
             <p>{data.teacher}</p>
             <p>{data.room}</p>
         </div>
-    );
-};
+    )
+}
 
-export default Row;
+export default Row

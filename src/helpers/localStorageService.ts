@@ -1,4 +1,4 @@
-import {ISettings} from "../types/settings";
+import {ISettings} from '../types/settings'
 
 export const getSettingsFromStorage = (key: string): ISettings => {
     const data: string | null = localStorage.getItem(key)
@@ -10,7 +10,8 @@ export const getSettingsFromStorage = (key: string): ISettings => {
             expandToday: true,
             expandAllDays: false,
             specialization: 'ivt',
-            group:'ДП-41'
+            group:'ДП-41',
+            todayPosition: 'start'
         }
         setStorageSettings(key, defaultSettings)
         return defaultSettings
@@ -20,6 +21,6 @@ export const getSettingsFromStorage = (key: string): ISettings => {
 }
 
 export const setStorageSettings = (key: string, data: ISettings): void => {
-    const jsonData = JSON.stringify(data);
-    localStorage.setItem(key, jsonData);
+    const jsonData = JSON.stringify(data)
+    localStorage.setItem(key, jsonData)
 }

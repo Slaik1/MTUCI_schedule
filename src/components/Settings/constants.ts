@@ -1,7 +1,21 @@
-import {TOptions} from "../UIKit/SelectInput/selectInput.model";
-import {settingsStore} from "../../store/settingsStore";
+import {TOptions} from '../UIKit/SelectInput/selectInput.model'
+import {settingsStore} from '../../store/settingsStore'
 
 const {setSettingsItem} = settingsStore
+export const DAY_PLACE: TOptions = [
+    {
+        value: 'start',
+        label: 'В начале'
+    },
+    {
+        value: 'middle',
+        label: 'В середине'
+    },
+    {
+        value: 'end',
+        label: 'В конце'
+    }
+]
 
 export const DAY_LENGTH_INPUT_DATA: TOptions = [
     {
@@ -104,124 +118,124 @@ export const GROUP_INPUT_DATA:Record<string, TOptions> = {
             label: 'ПО-51'
         }
     ],
-    "itss": [
+    'itss': [
         {
-            value: "ДИ-11",
-            label: "ДИ-11"
+            value: 'ДИ-11',
+            label: 'ДИ-11'
         },
         {
-            value: "ДИ-12",
-            label: "ДИ-12"
+            value: 'ДИ-12',
+            label: 'ДИ-12'
         },
         {
-            value: "ДИ-13",
-            label: "ДИ-13"
+            value: 'ДИ-13',
+            label: 'ДИ-13'
         },
         {
-            value: "И-11",
-            label: "И-11"
+            value: 'И-11',
+            label: 'И-11'
         },
         {
-            value: "И-12",
-            label: "И-12"
+            value: 'И-12',
+            label: 'И-12'
         },
         {
-            value: "И-13",
-            label: "И-13"
+            value: 'И-13',
+            label: 'И-13'
         },
         {
-            value: "И-14",
-            label: "И-14"
+            value: 'И-14',
+            label: 'И-14'
         },
         {
-            value: "И-15",
-            label: "И-15"
+            value: 'И-15',
+            label: 'И-15'
         },
         {
-            value: "ОЗИ-11",
-            label: "ОЗИ-11"
+            value: 'ОЗИ-11',
+            label: 'ОЗИ-11'
         }
     ],
     'itss-ccck' : [
         {
-            value: "ДС-21",
-            label: "ДС-21"
+            value: 'ДС-21',
+            label: 'ДС-21'
         },
         {
-            value: "ДС-41",
-            label: "ДС-41"
+            value: 'ДС-41',
+            label: 'ДС-41'
         },
         {
-            value: "С-21",
-            label: "С-21"
+            value: 'С-21',
+            label: 'С-21'
         },
         {
-            value: "KC-31",
-            label: "KC-31"
+            value: 'KC-31',
+            label: 'KC-31'
         },
         {
-            value: "C-31",
-            label: "C-31"
+            value: 'C-31',
+            label: 'C-31'
         },
         {
-            value: "KC-41",
-            label: "KC-41"
+            value: 'KC-41',
+            label: 'KC-41'
         },
         {
-            value: "C-51",
-            label: "C-51"
+            value: 'C-51',
+            label: 'C-51'
         }
     ],
     'itss-mts' : [
         {
-            value: "М-51",
-            label: "М-51"
+            value: 'М-51',
+            label: 'М-51'
         },
         {
-            value: "ДМ-21",
-            label: "ДМ-21"
+            value: 'ДМ-21',
+            label: 'ДМ-21'
         }
     ],
     'itss-zccc' : [
         {
-            value: "ДЗ-21",
-            label: "ДЗ-21"
+            value: 'ДЗ-21',
+            label: 'ДЗ-21'
         },
         {
-            value: "ДЗ-31",
-            label: "ДЗ-31"
+            value: 'ДЗ-31',
+            label: 'ДЗ-31'
         },
         {
-            value: "ДЗ-41",
-            label: "ДЗ-41"
+            value: 'ДЗ-41',
+            label: 'ДЗ-41'
         },
         {
-            value: "ЗС-21",
-            label: "ЗС-21"
+            value: 'ЗС-21',
+            label: 'ЗС-21'
         },
         {
-            value: "ЗС-22",
-            label: "ЗС-22"
+            value: 'ЗС-22',
+            label: 'ЗС-22'
         },
         {
-            value: "ЗС-31",
-            label: "ЗС-31"
+            value: 'ЗС-31',
+            label: 'ЗС-31'
         },
         {
-            value: "ЗС-32",
-            label: "ЗС-32"
+            value: 'ЗС-32',
+            label: 'ЗС-32'
         },
         {
-            value: "ЗС-41",
-            label: "ЗС-41"
+            value: 'ЗС-41',
+            label: 'ЗС-41'
         },
         {
-            value: "ЗС-42",
-            label: "ЗС-42"
+            value: 'ЗС-42',
+            label: 'ЗС-42'
         },
         {
-            value: "ЗС-51",
-            label: "ЗС-51"
+            value: 'ЗС-51',
+            label: 'ЗС-51'
         },
     ],
 }

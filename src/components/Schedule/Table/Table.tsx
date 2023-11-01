@@ -1,11 +1,11 @@
-import React, {FC, useEffect, useState} from 'react';
-import {TTable} from "../../../types/schedule";
-import cl from "./Table.module.scss"
-import Row from "./Row/Row";
-import classNames from "classnames";
-import {getCurrentDate, MakeValidDayOfWeek} from "./constants";
-import {settingsStore} from "../../../store/settingsStore";
-import {ReactSVG} from "react-svg";
+import React, {FC, useEffect, useState} from 'react'
+import classNames from 'classnames'
+import {ReactSVG} from 'react-svg'
+import {TTable} from '../../../types/schedule'
+import {settingsStore} from '../../../store/settingsStore'
+import cl from './Table.module.scss'
+import Row from './Row/Row'
+import {getCurrentDate, MakeValidDayOfWeek} from './constants'
 
 interface TableProps {
     scheduleData: TTable
@@ -23,7 +23,7 @@ const Table: FC<TableProps> = ({scheduleData}) => {
 
     useEffect(() => {
         setIsAdditionalInfo(shouldExpand())
-    }, [settings.expandAllDays, settings.expandToday]);
+    }, [settings.expandAllDays, settings.expandToday])
 
     const inputClasses = classNames({
         [cl.wrapper]: true,
@@ -58,7 +58,7 @@ const Table: FC<TableProps> = ({scheduleData}) => {
                 scheduleData.map((rowData, i) => <Row data={rowData} key={i}/>)
             }
         </div>
-    );
-};
+    )
+}
 
-export default Table;
+export default Table

@@ -1,4 +1,4 @@
-import {DaysOfWeek} from "../components/Schedule/Table/constants";
+import {DaysOfWeek} from '../components/Schedule/Table/constants'
 
 export interface IRow {
     date: string;

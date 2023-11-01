@@ -1,29 +1,29 @@
-import React, {useEffect, useState} from 'react';
-import cl from "./Schedule.module.scss"
-import Header from "./Header/Header";
-import Modal from "../UIKit/Modal/Modal";
-import Settings from "../Settings/Settings";
-import AboutProject from "../AboutProject/AboutProject";
-import Table from "./Table/Table";
-import ScheduleService from "../../api/ScheduleService";
-import {TTableDataList} from "../../types/schedule";
+import React, {useEffect, useState} from 'react'
+import Modal from '../UIKit/Modal/Modal'
+import Settings from '../Settings/Settings'
+import AboutProject from '../AboutProject/AboutProject'
+import ScheduleService from '../../api/ScheduleService'
+import {TTableDataList} from '../../types/schedule'
+import Table from './Table/Table'
+import cl from './Schedule.module.scss'
+import Header from './Header/Header'
 
 const Schedule = () => {
     const [isSettingsOpen, setIsSettingsOpen] = useState(false)
     const [isAboutProjectOpen, setIsAboutProjectOpen] = useState(false)
-    const [scheduleDataList, setScheduleDataList] = useState<TTableDataList>([]);
+    const [scheduleDataList, setScheduleDataList] = useState<TTableDataList>([])
 
     useEffect(() => {
         const getSchedule = async () => {
             try {
-                const response = await ScheduleService.getSchedule();
-                setScheduleDataList(response);
+                const response = await ScheduleService.getSchedule()
+                setScheduleDataList(response)
             } catch (error) {
-                console.error('Ошибка при получении расписания:', error);
+                console.error('Ошибка при получении расписания:', error)
             }
-        };
-        getSchedule();
-    }, []);
+        }
+        getSchedule()
+    }, [])
 
     return (
         <div className={cl.wrapper}>
@@ -51,7 +51,7 @@ const Schedule = () => {
                 </Modal>
             }
         </div>
-    );
-};
+    )
+}
 
-export default Schedule;
+export default Schedule

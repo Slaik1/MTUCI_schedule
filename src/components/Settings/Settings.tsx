@@ -1,10 +1,10 @@
-import React, {FC} from 'react';
-import cl from "./Settings.module.scss"
-import SwitchBtn from "../UIKit/SwitchBtn/SwitchBtn";
-import SelectInput from "../UIKit/SelectInput/SelectInput";
-import {observer} from "mobx-react-lite";
-import {settingsStore} from "../../store/settingsStore";
-import {DAY_LENGTH_INPUT_DATA, GROUP_INPUT_DATA, SPECIALIZATION_INPUT_DATA} from "./constants";
+import React, {FC} from 'react'
+import {observer} from 'mobx-react-lite'
+import SelectInput from '../UIKit/SelectInput/SelectInput'
+import SwitchBtn from '../UIKit/SwitchBtn/SwitchBtn'
+import {settingsStore} from '../../store/settingsStore'
+import cl from './Settings.module.scss'
+import {DAY_LENGTH_INPUT_DATA, DAY_PLACE, GROUP_INPUT_DATA, SPECIALIZATION_INPUT_DATA} from './constants'
 
 
 const Settings: FC = () => {
@@ -34,6 +34,13 @@ const Settings: FC = () => {
                 className={cl.input}
                 title={'Количество дней в рассписании'}
             />
+            <SelectInput
+                value={settings.todayPosition}
+                setValue={(value) => setSettingsItem('todayPosition', String(value))}
+                options={DAY_PLACE}
+                className={cl.input}
+                title={'Место сегодняшнего дня'}
+            />
             <div className={cl.settings_list}>
                 <div className={cl.setting}>
                     Подсвечивать сегодняшний день
@@ -59,7 +66,7 @@ const Settings: FC = () => {
 
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default observer(Settings);
+export default observer(Settings)

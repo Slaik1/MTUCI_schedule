@@ -1,6 +1,6 @@
-import React, {FC} from 'react';
-import cl from "./DropList.module.scss"
-import {TOptions} from "../selectInput.model";
+import React, {FC} from 'react'
+import {TOptions} from '../selectInput.model'
+import cl from './DropList.module.scss'
 
 interface DropListProps {
     dropListData: TOptions;
@@ -24,7 +24,7 @@ const DropList:FC<DropListProps> = ({dropListData, setValue, value}) => {
                 )
             }
         </div>
-    );
-};
+    )
+}
 
-export default DropList;
+export default DropList

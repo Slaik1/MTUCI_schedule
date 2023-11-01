@@ -1,6 +1,6 @@
-import React, {FC} from 'react';
-import cl from "./AboutProject.module.scss"
-import {ReactSVG} from "react-svg";
+import React, {FC} from 'react'
+import {ReactSVG} from 'react-svg'
+import cl from './AboutProject.module.scss'
 
 const AboutProject:FC = () => {
     return (
@@ -10,13 +10,13 @@ const AboutProject:FC = () => {
                 просмотра рассписания пар университета СКФ МТУСИ.
             </p>
             <div className={cl.icons}>
-                <ReactSVG src="./svg/about/react.svg"/>
-                <ReactSVG src="./svg/about/typescript.svg"/>
-                <ReactSVG src="./svg/about/mobx.svg"/>
-                <ReactSVG src="./svg/about/sass.svg"/>
+                <ReactSVG src='./svg/about/react.svg'/>
+                <ReactSVG src='./svg/about/typescript.svg'/>
+                <ReactSVG src='./svg/about/mobx.svg'/>
+                <ReactSVG src='./svg/about/sass.svg'/>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default AboutProject;
+export default AboutProject

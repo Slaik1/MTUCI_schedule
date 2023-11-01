@@ -1,6 +1,6 @@
-import {makeAutoObservable} from "mobx";
-import {getSettingsFromStorage, setStorageSettings} from "../helpers/localStorageService";
-import {ISettings} from "../types/settings";
+import {makeAutoObservable} from 'mobx'
+import {getSettingsFromStorage, setStorageSettings} from '../helpers/localStorageService'
+import {ISettings} from '../types/settings'
 
 class SettingsStore {
     settings: ISettings
@@ -11,8 +11,6 @@ class SettingsStore {
     }
 
     setSettingsItem = <K extends keyof ISettings>(key: K, value: ISettings[K]): void => {
-        console.log('asd')
-
         this.settings[key] = value
         setStorageSettings('MTUSISchedule', this.settings)
     }

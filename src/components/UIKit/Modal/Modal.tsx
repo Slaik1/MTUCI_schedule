@@ -1,5 +1,5 @@
-import React, {FC, ReactNode} from 'react';
-import cl from './Modal.module.scss';
+import React, {FC, ReactNode} from 'react'
+import cl from './Modal.module.scss'
 
 interface ModalProps {
     children: ReactNode;
@@ -9,11 +9,11 @@ interface ModalProps {
 
 const Modal: FC<ModalProps> = ({children, setIsOpen, resetData}) => {
 
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden'
 
     const closeModal = () => {
         setIsOpen((prev:boolean) => !prev)
-        document.body.style.overflow = 'auto';
+        document.body.style.overflow = 'auto'
     }
 
 
@@ -23,7 +23,7 @@ const Modal: FC<ModalProps> = ({children, setIsOpen, resetData}) => {
                 {children}
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default Modal;
+export default Modal

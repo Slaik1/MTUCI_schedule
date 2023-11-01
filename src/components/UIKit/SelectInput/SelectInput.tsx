@@ -1,10 +1,10 @@
-import React, {FC, useState} from 'react';
-import cl from "./SelectInput.module.scss"
-import classNames from "classnames";
-import {ReactSVG} from "react-svg";
-import {useOutsideClick} from "../../../hooks/useOutsideClick";
-import {IOption, TOptions} from "./selectInput.model";
-import DropList from "./DropList/DropList";
+import React, {FC, useState} from 'react'
+import classNames from 'classnames'
+import {ReactSVG} from 'react-svg'
+import {useOutsideClick} from '../../../hooks/useOutsideClick'
+import cl from './SelectInput.module.scss'
+import {IOption, TOptions} from './selectInput.model'
+import DropList from './DropList/DropList'
 
 interface SelectInputProps {
     className?: string;
@@ -37,12 +37,12 @@ const SelectInput:FC<SelectInputProps> = ({className = '', options, value, setVa
         <div className={cl.container}>
             <p className={cl.title}>{title}</p>
             <div ref={ref}
-                 className={inputClasses}
-                 onClick={() => setIsInputActive((prev) => !prev)}>
+                className={inputClasses}
+                onClick={() => setIsInputActive((prev) => !prev)}>
                 <p className={cl.input}>
                     {getCurrentLabel()}
                 </p>
-                <ReactSVG className={cl.svg_arrow} src="./svg/input_arrow.svg"/>
+                <ReactSVG className={cl.svg_arrow} src='./svg/input_arrow.svg'/>
                 {
                     isInputActive &&
                     <DropList
@@ -54,7 +54,7 @@ const SelectInput:FC<SelectInputProps> = ({className = '', options, value, setVa
             </div>
         </div>
 
-    );
-};
+    )
+}
 
-export default SelectInput;
+export default SelectInput

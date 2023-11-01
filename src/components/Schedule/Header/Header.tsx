@@ -1,6 +1,6 @@
-import React, {FC} from 'react';
-import cl from "./Header.module.scss"
-import { ReactSVG } from 'react-svg';
+import React, {FC} from 'react'
+import { ReactSVG } from 'react-svg'
+import cl from './Header.module.scss'
 
 interface HeaderProps {
     setIsSettingsOpen:SetAction<boolean>;
@@ -11,7 +11,7 @@ const Header:FC<HeaderProps> = ({setIsSettingsOpen, setIsAboutProjectOpen}) => {
     return (
         <header className={cl.header}>
             <div className={cl.logo_wrapper}>
-                <ReactSVG src="svg/header_logo.svg"/>
+                <ReactSVG src='svg/header_logo.svg'/>
                 <div className={cl.title}>
                     <h1>СКФ МТУСИ</h1>
                     <p>Рассписание</p>
@@ -22,7 +22,7 @@ const Header:FC<HeaderProps> = ({setIsSettingsOpen, setIsAboutProjectOpen}) => {
                 <li onClick={() =>setIsAboutProjectOpen(true)}>О проекте</li>
             </ul>
         </header>
-    );
-};
+    )
+}
 
-export default Header;
+export default Header
