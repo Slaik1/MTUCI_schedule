@@ -28,6 +28,7 @@ const Schedule = () => {
     return (
         <div className={cl.wrapper}>
             <Header setIsAboutProjectOpen={setIsAboutProjectOpen} setIsSettingsOpen={setIsSettingsOpen}/>
+
             <div className={cl.container}>
                 {
                     scheduleDataList

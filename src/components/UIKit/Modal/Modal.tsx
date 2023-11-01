@@ -9,9 +9,13 @@ interface ModalProps {
 
 const Modal: FC<ModalProps> = ({children, setIsOpen, resetData}) => {
 
+    document.body.style.overflow = 'hidden';
+
     const closeModal = () => {
         setIsOpen((prev:boolean) => !prev)
+        document.body.style.overflow = 'auto';
     }
+
 
     return (
         <div className={cl.wrapper} onClick={closeModal}>
