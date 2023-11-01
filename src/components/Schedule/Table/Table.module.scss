@@ -1,4 +1,5 @@
 .wrapper {
+
   margin-bottom: 20px;
   width: 100%;
 
@@ -7,8 +8,8 @@
   }
 
   .header {
-    padding: 20px;
-    border-bottom: 1px solid var(--border-component);
+    width: 100%;
+    padding: 20px 0;
     text-align: start;
     font-size: 18px;
     line-height: 24px;
@@ -17,21 +18,41 @@
 
     .titleWrapper {
       display: grid;
-      grid-template-columns: 10% 15% 40% 35%;
+      grid-template-columns: 10% 20% 25% 40% 5%;
       align-items: center;
 
       p {
         display: flex;
         justify-content: center;
+        border-right: 1px solid var(--border-component);
+
+        &:last-child {
+          border:none;
+        }
+      }
+      .openBtn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        div {
+          width: 20px;
+          height: 20px;
+
+          svg {
+            width: 20px;
+            height: 20px;
+            fill: #737373
+          }
+        }
       }
     }
   }
-
-
 }
 
 .header_open {
   .header {
+    font-weight: 500;
     .titleWrapper {
       grid-template-columns: 10% 40% 15% 20% 15%;
     }
@@ -39,8 +60,13 @@
 }
 
 .today {
+
   .header {
     background: var(--aditional);
     color: #fff;
+
+    svg {
+      fill: #fff !important;
+    }
   }
 }

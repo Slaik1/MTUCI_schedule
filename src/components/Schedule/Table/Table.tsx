@@ -5,6 +5,7 @@ import Row from "./Row/Row";
 import classNames from "classnames";
 import {getCurrentDate, MakeValidDayOfWeek} from "./constants";
 import {settingsStore} from "../../../store/settingsStore";
+import {ReactSVG} from "react-svg";
 
 interface TableProps {
     scheduleData: TTable
@@ -48,6 +49,7 @@ const Table: FC<TableProps> = ({scheduleData}) => {
                         <p>{MakeValidDayOfWeek(scheduleData[0].day)}</p>
                         <p>{scheduleData[0].lesson} пара в {scheduleData[0].room} кабинете</p>
                         <p>{scheduleData[0].discipline}</p>
+                        <ReactSVG className={cl.openBtn} src='./svg/input_arrow.svg'/>
                     </div>
                 }
             </div>
@@ -55,9 +57,6 @@ const Table: FC<TableProps> = ({scheduleData}) => {
                 isAdditionalInfo &&
                 scheduleData.map((rowData, i) => <Row data={rowData} key={i}/>)
             }
-            <div className={cl.open}>
-
-            </div>
         </div>
     );
 };
