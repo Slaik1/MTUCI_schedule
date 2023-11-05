@@ -6,6 +6,8 @@ import {settingsStore} from '../../../store/settingsStore'
 import cl from './Table.module.scss'
 import Row from './Row/Row'
 import {getCurrentDate, MakeValidDayOfWeek} from './constants'
+import {CSSTransition, TransitionGroup} from "react-transition-group";
+import './animation.scss'
 
 interface TableProps {
     scheduleData: TTable
@@ -53,10 +55,21 @@ const Table: FC<TableProps> = ({scheduleData}) => {
                     </div>
                 }
             </div>
-            {
-                isAdditionalInfo &&
-                scheduleData.map((rowData, i) => <Row data={rowData} key={i}/>)
-            }
+            <TransitionGroup>
+                {
+                    isAdditionalInfo &&
+
+                    scheduleData.map((rowData, i) =>
+                        <CSSTransition
+                            key={i}
+                            timeout={500}
+                            classNames='item'
+                        >
+                            <Row data={rowData} key={i}/>
+                        </CSSTransition>
+                    )
+                }
+            </TransitionGroup>
         </div>
     )
 }

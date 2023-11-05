@@ -20,7 +20,7 @@ export const DAY_PLACE: TOptions = [
 export const DAY_LENGTH_INPUT_DATA: TOptions = [
     {
         value: 1,
-        label: '1 день'
+        label: 'Сегодня'
     },
     {
         value: 10,

@@ -16,18 +16,24 @@
     background: var(--bg-light-component);
     cursor: pointer;
 
+    &:hover {
+      svg {
+        fill: #737373 !important;
+      }
+    }
+
     .titleWrapper {
       display: grid;
       grid-template-columns: 10% 20% 25% 40% 5%;
-      align-items: center;
+
 
       p {
         display: flex;
         justify-content: center;
         border-right: 1px solid var(--border-component);
 
-        &:last-child {
-          border:none;
+        &:nth-child(4n) {
+          border-right: none  ;
         }
       }
       .openBtn {
@@ -42,7 +48,8 @@
           svg {
             width: 20px;
             height: 20px;
-            fill: #737373
+            fill: #73737300;
+            transition: all 0.3s ease;
           }
         }
       }
@@ -64,9 +71,10 @@
   .header {
     background: var(--aditional);
     color: #fff;
-
-    svg {
-      fill: #fff !important;
+    &:hover {
+      svg {
+        fill: #fff !important;
+      }
     }
   }
 }
