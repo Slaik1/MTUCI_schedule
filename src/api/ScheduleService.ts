@@ -5,8 +5,12 @@ import {settingsStore} from "../store/settingsStore";
 export default class ScheduleService {
 
     static async getSchedule(): Promise<TTableDataList> {
-        const params =  settingsStore.settings
-        const response = await axios.get('http://192.168.0.107:4200/schedule', {params})
+        const settingsString = JSON.stringify(settingsStore.settings);
+        const response = await axios.get('http://localhost:4200/schedule', {
+            params: {
+                data: settingsString
+            }
+        })
         return JSON.parse(response.data)
     }
 }

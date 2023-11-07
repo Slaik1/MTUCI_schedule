@@ -34,19 +34,19 @@ const Settings: FC = () => {
                 className={cl.input}
                 title={'Количество дней в рассписании'}
             />
-            <SelectInput
-                value={settings.todayPosition}
-                setValue={(value) => setSettingsItem('todayPosition', String(value))}
-                options={DAY_PLACE}
-                className={cl.input}
-                title={'Место сегодняшнего дня'}
-            />
             <div className={cl.settings_list}>
                 <div className={cl.setting}>
                     Подсвечивать сегодняшний день
                     <SwitchBtn
                         setValue={(value) => setSettingsItem('highlightToday', value)}
                         value={settings.highlightToday}
+                    />
+                </div>
+                <div className={cl.setting}>
+                    Сегодняшний день в начале
+                    <SwitchBtn
+                        setValue={(value) => setSettingsItem('setTodayStart', value)}
+                        value={settings.setTodayStart}
                     />
                 </div>
                 <div className={cl.setting}>
