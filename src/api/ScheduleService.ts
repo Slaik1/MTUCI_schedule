@@ -11,6 +11,6 @@ export default class ScheduleService {
                 data: settingsString
             }
         })
-        return JSON.parse(response.data)
+        return response.data
     }
 }

@@ -1,22 +1,6 @@
 import {TOptions} from '../UIKit/SelectInput/selectInput.model'
 import {settingsStore} from '../../store/settingsStore'
 
-const {setSettingsItem} = settingsStore
-export const DAY_PLACE: TOptions = [
-    {
-        value: 'start',
-        label: 'В начале'
-    },
-    {
-        value: 'middle',
-        label: 'В середине'
-    },
-    {
-        value: 'end',
-        label: 'В конце'
-    }
-]
-
 export const DAY_LENGTH_INPUT_DATA: TOptions = [
     {
         value: 1,

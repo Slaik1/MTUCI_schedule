@@ -16,7 +16,7 @@ const DropList:FC<DropListProps> = ({dropListData, setValue, value}) => {
                 dropListData.map((el, i) =>
                     <div
                         key={i}
-                        className={`${cl.dropItem} + ${value === el.value ? cl.active: ''}`}
+                        className={`${cl.dropItem} + ${value === el.value ? cl.active: ''}`} // нужен classnames
                         onClick={() => setValue(el)}
                     >
                         {el.label}

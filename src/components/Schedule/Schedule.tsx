@@ -13,16 +13,19 @@ const Schedule = () => {
     const [isAboutProjectOpen, setIsAboutProjectOpen] = useState(false)
     const [scheduleDataList, setScheduleDataList] = useState<TTableDataList>([])
 
-    useEffect(() => {
-        const getSchedule = async () => {
-            try {
-                const response = await ScheduleService.getSchedule()
-                setScheduleDataList(response)
-            } catch (error) {
-                console.error('Ошибка при получении расписания:', error)
-            }
+    const fetchSchedule = async () => {
+        try {
+            const response = await ScheduleService.getSchedule()
+            setScheduleDataList(response)
+        } catch (error) {
+            console.error('Ошибка при получении расписания:', error)
+        } finally {
+            
         }
-        getSchedule()
+    }
+
+    useEffect(() => {
+        fetchSchedule()
     }, [])
 
     return (

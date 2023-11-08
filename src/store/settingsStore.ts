@@ -2,6 +2,7 @@ import {makeAutoObservable} from 'mobx'
 import {getSettingsFromStorage, setStorageSettings} from '../helpers/localStorageService'
 import {ISettings} from '../types/settings'
 
+
 class SettingsStore {
     settings: ISettings
 

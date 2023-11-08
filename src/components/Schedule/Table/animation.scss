@@ -1,18 +1,20 @@
-.remove-btn {
-  margin-right: 0.5rem;
-}
-
-.item-enter {
+.drop-item-enter {
   opacity: 0;
+  padding: 0 0;
 }
-.item-enter-active {
+.drop-item-enter-active {
   opacity: 1;
-  transition: opacity 500ms ease-in;
+  padding: 20px 0;
+  transition: all 200ms linear;
 }
-.item-exit {
+.drop-item-exit {
   opacity: 1;
+  padding: 20px 0;
+  transition: all 200ms linear;
+  height: auto;
 }
-.item-exit-active {
+.drop-item-exit-active {
   opacity: 0;
-  transition: opacity 500ms ease-in;
+  padding: 0 0;
+  height: 0;
 }

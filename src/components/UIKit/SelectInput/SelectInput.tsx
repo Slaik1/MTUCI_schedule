@@ -25,9 +25,7 @@ const SelectInput:FC<SelectInputProps> = ({className = '', options, value, setVa
         [cl.active]:isInputActive
     })
 
-    const setGlobalValue = (el: IOption) => {
-        setValue(el.value)
-    }
+    const setGlobalValue = (el: IOption) => setValue(el.value)
 
     const getCurrentLabel = () => {
         return options.find((el) => el.value === value)?.label

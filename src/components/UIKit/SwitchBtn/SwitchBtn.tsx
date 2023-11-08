@@ -16,14 +16,13 @@ const SwitchBtn:FC<SwitchBtnProps> = ({value, setValue}) => {
 
     const labelClickHandler = (event:React.MouseEvent<HTMLDivElement>) => {
         event.stopPropagation()
-        console.log('123')
         setValue(!value)
     }
 
     return (
         <div className={inputClasses} onClick={labelClickHandler}>
             <input type='checkbox'/>
-            <div></div>
+            <div/>
         </div>
     )
 }

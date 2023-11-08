@@ -25,7 +25,7 @@
     .titleWrapper {
       display: grid;
       grid-template-columns: 10% 20% 25% 40% 5%;
-
+      transition: all 0.2s linear;
 
       p {
         display: flex;
@@ -58,10 +58,19 @@
 }
 
 .header_open {
+
   .header {
     font-weight: 500;
+
     .titleWrapper {
       grid-template-columns: 10% 40% 15% 20% 15%;
+
+      p {
+        border-right: 1px solid var(--border-component) !important;
+        &:nth-child(5n) {
+          border-right: none  !important;
+        }
+      }
     }
   }
 }
@@ -71,6 +80,7 @@
   .header {
     background: var(--aditional);
     color: #fff;
+
     &:hover {
       svg {
         fill: #fff !important;

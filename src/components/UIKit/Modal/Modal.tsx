@@ -1,6 +1,6 @@
 import React, {FC, ReactNode} from 'react'
 import cl from './Modal.module.scss'
-
+// 3 хуиты
 interface ModalProps {
     children: ReactNode;
     setIsOpen: SetAction<boolean>;

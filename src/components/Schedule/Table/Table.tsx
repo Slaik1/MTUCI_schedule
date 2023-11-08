@@ -36,6 +36,7 @@ const Table: FC<TableProps> = ({scheduleData}) => {
     return (
         <div className={inputClasses}>
             <div className={cl.header} onClick={() => setIsAdditionalInfo((prev) => !prev)}>
+
                 {isAdditionalInfo
                     ?
                     <div className={cl.titleWrapper}>
@@ -58,12 +59,11 @@ const Table: FC<TableProps> = ({scheduleData}) => {
             <TransitionGroup>
                 {
                     isAdditionalInfo &&
-
                     scheduleData.map((rowData, i) =>
                         <CSSTransition
                             key={i}
-                            timeout={500}
-                            classNames='item'
+                            timeout={200}
+                            classNames='drop-item'
                         >
                             <Row data={rowData} key={i}/>
                         </CSSTransition>
