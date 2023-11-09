@@ -34,6 +34,7 @@
         text-overflow: ellipsis;
         hyphens: auto;
         word-break: break-word;
+        white-space: nowrap;
         text-align: center;
         &:nth-child(4n) {
           border-right: none  ;
@@ -117,6 +118,9 @@
     .header {
       .titleWrapper {
         grid-template-columns: 10% 10% 29% 53%;
+        p {
+          white-space: unset;
+        }
         .openBtn {
           display: none;
         }
