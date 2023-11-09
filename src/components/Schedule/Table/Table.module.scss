@@ -12,7 +12,6 @@
     padding: 20px 0;
     text-align: start;
     font-size: 18px;
-    line-height: 24px;
     background: var(--bg-light-component);
     cursor: pointer;
 
@@ -24,14 +23,18 @@
 
     .titleWrapper {
       display: grid;
-      grid-template-columns: 10% 20% 25% 40% 5%;
-      transition: all 0.2s linear;
-
+      grid-template-columns: 10% 10% 30% 45% 5%;
+      transition: grid-template-columns 0.2s linear;
       p {
         display: flex;
         justify-content: center;
+        align-items: center;
         border-right: 1px solid var(--border-component);
-
+        overflow: hidden;
+        text-overflow: ellipsis;
+        hyphens: auto;
+        word-break: break-word;
+        text-align: center;
         &:nth-child(4n) {
           border-right: none  ;
         }
@@ -49,7 +52,7 @@
             width: 20px;
             height: 20px;
             fill: #73737300;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
           }
         }
       }
@@ -63,8 +66,7 @@
     font-weight: 500;
 
     .titleWrapper {
-      grid-template-columns: 10% 40% 15% 20% 15%;
-
+      grid-template-columns: 10% 40% 15% 20% 15% !important;
       p {
         border-right: 1px solid var(--border-component) !important;
         &:nth-child(5n) {
@@ -88,3 +90,56 @@
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .wrapper {
+    p {
+      font-size: 16px !important;
+    }
+    .header {
+      .titleWrapper {
+        grid-template-columns: 10% 10% 30% 50%;
+
+        .openBtn {
+          display: none;
+        }
+      }
+    }
+
+  }
+}
+
+@media (max-width: 726px) {
+  .wrapper {
+    p {
+      font-size: 14px !important;
+    }
+    .header {
+      .titleWrapper {
+        grid-template-columns: 10% 10% 29% 53%;
+        .openBtn {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 606px) {
+  .wrapper {
+    .header {
+      .titleWrapper {
+        grid-template-columns: 15% 10% 31% 44%;
+      }
+    }
+  }
+
+  .header_open {
+    .header {
+      .titleWrapper {
+        grid-template-columns: 15% 30% 15% 20% 20% !important;
+      }
+    }
+  }
+}
+

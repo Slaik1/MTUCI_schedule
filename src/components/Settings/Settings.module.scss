@@ -26,3 +26,30 @@
   width: 500px;
   margin-bottom: 25px;
 }
+
+@media (max-width: 726px) {
+  .wrapper {
+    h1 {
+      font-size: 20px;
+    }
+    .settings_list {
+      .setting {
+        font-size: 14px;
+      }
+    }
+  }
+  .input {
+    width: 400px;
+  }
+}
+@media (max-width: 606px) {
+  .input {
+    width: 300px;
+  }
+}
+
+@media (max-width: 375px) {
+  .input {
+    width: 280px;
+  }
+}

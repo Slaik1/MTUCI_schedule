@@ -11,12 +11,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 90px;
+    text-align: center;
     font-size: 18px;
+    overflow: hidden;
+    word-break: break-word;
+    text-overflow: ellipsis;
+    hyphens: auto;
     color: var(--font-balck);
 
     &:last-child {
       border: none;
     }
+  }
+}
+
+@media (max-width: 606px) {
+  .row {
+    grid-template-columns: 15% 30% 15% 20% 20%;
   }
 }

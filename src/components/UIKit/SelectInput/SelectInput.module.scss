@@ -80,3 +80,15 @@
     }
   }
 }
+
+@media (max-width: 726px) {
+  .container {
+    .title {
+      font-size: 12px;
+    }
+    .wrapper {
+      font-size: 14px;
+      height: 30px;
+    }
+  }
+}

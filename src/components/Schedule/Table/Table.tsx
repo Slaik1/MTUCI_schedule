@@ -5,7 +5,7 @@ import {TTable} from '../../../types/schedule'
 import {settingsStore} from '../../../store/settingsStore'
 import cl from './Table.module.scss'
 import Row from './Row/Row'
-import {getCurrentDate, MakeValidDayOfWeek} from './constants'
+import {getCurrentDate} from './constants'
 import {CSSTransition, TransitionGroup} from "react-transition-group";
 import './animation.scss'
 
@@ -43,13 +43,13 @@ const Table: FC<TableProps> = ({scheduleData}) => {
                         <p>Пара</p>
                         <p>Дисциплина</p>
                         <p>Вид</p>
-                        <p>Преподаватель</p>
+                        <p>Препод</p>
                         <p>Кабинет</p>
                     </div>
                     :
                     <div className={cl.titleWrapper}>
                         <p>{scheduleData[0].date}</p>
-                        <p>{MakeValidDayOfWeek(scheduleData[0].day)}</p>
+                        <p>{scheduleData[0].day}</p>
                         <p>{scheduleData[0].lesson} пара в {scheduleData[0].room} кабинете</p>
                         <p>{scheduleData[0].discipline}</p>
                         <ReactSVG className={cl.openBtn} src='./svg/input_arrow.svg'/>

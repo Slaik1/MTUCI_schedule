@@ -26,8 +26,6 @@
     cursor: pointer;
     font-size: 15px;
 
-
-
     &:hover {
       background: var(--aditional-hover);
     }
@@ -35,5 +33,13 @@
   .active {
     background: #2383e8 !important;
     color: #fff;
+  }
+}
+
+@media (max-width: 726px) {
+  .dropList {
+    .dropItem {
+      font-size: 14px;
+    }
   }
 }
