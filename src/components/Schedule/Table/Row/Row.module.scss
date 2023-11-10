@@ -5,6 +5,9 @@
   display: grid;
   grid-template-columns: 10% 40% 15% 20% 15%;
   padding: 20px 0;
+  &:last-child {
+    border-radius:0 0 3px 3px;
+  }
   p {
     border-right: 1px solid var(--border-component);
     width: 100%;
