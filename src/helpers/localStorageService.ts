@@ -5,13 +5,13 @@ export const getSettingsFromStorage = (key: string): ISettings => {
 
     if (data === null) {
         const defaultSettings: ISettings = {
-            scheduleLength: 10,
+            scheduleLength: 1000,
             highlightToday: true,
             expandToday: true,
             expandAllDays: false,
             specialization: 'ivt',
             group:'ДП-41',
-            setTodayStart: false
+            setTodayStart: true
         }
         setStorageSettings(key, defaultSettings)
         return defaultSettings

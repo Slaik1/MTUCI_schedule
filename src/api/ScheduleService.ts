@@ -1,12 +1,13 @@
 import axios from 'axios'
 import {TTableDataList} from '../types/schedule'
 import {settingsStore} from "../store/settingsStore";
+import { BASE_URL } from '../constants';
+
 
 export default class ScheduleService {
-
-    static async getSchedule(): Promise<TTableDataList> {
+    async getSchedule(): Promise<TTableDataList> {
         const settingsString = JSON.stringify(settingsStore.settings);
-        const response = await axios.get('http://95.163.233.148:4200/schedule', {
+        const response = await axios.get(BASE_URL + '/schedule', {
             params: {
                 data: settingsString
             }

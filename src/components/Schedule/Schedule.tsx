@@ -8,6 +8,8 @@ import Table from './Table/Table'
 import cl from './Schedule.module.scss'
 import Header from './Header/Header'
 
+const scheduleService = new ScheduleService()
+
 const Schedule = () => {
     const [isSettingsOpen, setIsSettingsOpen] = useState(false)
     const [isAboutProjectOpen, setIsAboutProjectOpen] = useState(false)
@@ -15,7 +17,7 @@ const Schedule = () => {
 
     const fetchSchedule = async () => {
         try {
-            const response = await ScheduleService.getSchedule()
+            const response = await scheduleService.getSchedule()
             setScheduleDataList(response)
         } catch (error) {
             console.error('Ошибка при получении расписания:', error)
