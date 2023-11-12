@@ -1,5 +1,4 @@
 import {TOptions} from '../UIKit/SelectInput/selectInput.model'
-import {settingsStore} from '../../store/settingsStore'
 
 export const DAY_LENGTH_INPUT_DATA: TOptions = [
     {

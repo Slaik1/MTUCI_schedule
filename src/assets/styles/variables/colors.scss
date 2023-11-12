@@ -4,16 +4,35 @@
   --wite200: #cbcbcb;
 
   --black: #000;
-  --black100: #222222;
+  --black100: #1E1E1E;
+  --black200: #222222;
+  --balck300: #2C2C2C;
+  --balck400: #555;
+  --balck500: #777;
 
   --blue: #2383e8;
   --blue100: #cadcee;
 
-  --bg-light: var(--wite100);
-  --bg-light-component: var(--wite);
+  --yellow: #FFC107;
+  --yellow100: #ffcc53;
+}
+
+html[data-theme='light'] {
+  --bg: var(--wite100);
+  --bg-component: var(--wite);
   --border-component: var(--wite100);
   --border-component-hover: var(--wite200);
-  --font-balck: var(--black100);
+  --font: var(--black200);
   --aditional: var(--blue);
   --aditional-hover: var(--blue100);
+}
+
+html[data-theme='dark'] {
+  --bg: var(--balck300);
+  --bg-component: var(--black100);
+  --border-component: var(--balck400);
+  --border-component-hover: var(--balck500);
+  --font: var(--wite100);
+  --aditional: var(--yellow);
+  --aditional-hover: var(--yellow100);
 }

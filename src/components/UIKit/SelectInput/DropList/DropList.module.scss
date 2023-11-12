@@ -12,7 +12,7 @@
   border: 1px solid var(--border-component);
   overflow-x: hidden;
   overflow-y: auto;
-  background: var(--bg-light-component);
+  background: var(--bg-component);
   @include box-shadow(4px 4px 4px);
 
   .dropItem {
@@ -22,17 +22,18 @@
     width: 100%;
     height: 30px;
     padding-left: 10px;
-    background: var(--bg-light-component);
+    background: var(--bg-component);
     cursor: pointer;
     font-size: 15px;
 
     &:hover {
       background: var(--aditional-hover);
+      color: #1E1E1EFF;
     }
   }
   .active {
-    background: #2383e8 !important;
-    color: #fff;
+    background: var(--aditional) !important;
+    color: var(--bg-component);
   }
 }
 

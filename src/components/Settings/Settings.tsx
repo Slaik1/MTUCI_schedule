@@ -2,7 +2,6 @@ import React, {FC} from 'react'
 import {observer} from 'mobx-react-lite'
 
 import SelectInput from '../UIKit/SelectInput/SelectInput'
-import SwitchBtn from '../UIKit/SwitchBtn/SwitchBtn'
 
 import {settingsStore} from '../../store/settingsStore'
 import cl from './Settings.module.scss'

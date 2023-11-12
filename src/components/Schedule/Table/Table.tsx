@@ -1,12 +1,12 @@
 import React, {FC, useEffect, useState} from 'react'
 import classNames from 'classnames'
 import {ReactSVG} from 'react-svg'
+import {CSSTransition, TransitionGroup} from 'react-transition-group'
 import {TTable} from '../../../types/schedule'
 import {settingsStore} from '../../../store/settingsStore'
 import cl from './Table.module.scss'
 import Row from './Row/Row'
 import {getCurrentDate} from './constants'
-import {CSSTransition, TransitionGroup} from "react-transition-group";
 import './animation.scss'
 
 interface TableProps {

@@ -20,7 +20,6 @@ const Schedule = () => {
             const response = await scheduleService.getSchedule()
             setScheduleDataList(response)
         } catch (error) {
-            console.error('Ошибка при получении расписания:', error)
         } finally {
             
         }

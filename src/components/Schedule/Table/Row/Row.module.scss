@@ -1,7 +1,7 @@
 .row {
   width: 100%;
   border-top: 1px solid var(--border-component);
-  background: var(--bg-light-component);
+  background: var(--bg-component);
   display: grid;
   grid-template-columns: 10% 40% 15% 20% 15%;
   padding: 20px 0;
@@ -20,7 +20,7 @@
     word-break: break-word;
     text-overflow: ellipsis;
     hyphens: auto;
-    color: var(--font-balck);
+    color: var(--font);
 
     &:last-child {
       border: none;

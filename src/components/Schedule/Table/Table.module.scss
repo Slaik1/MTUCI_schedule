@@ -12,7 +12,7 @@
     padding: 20px 0;
     text-align: start;
     font-size: 18px;
-    background: var(--bg-light-component);
+    background: var(--bg-component);
     cursor: pointer;
     border-radius: 3px;
 
@@ -84,11 +84,11 @@
 
   .header {
     background: var(--aditional);
-    color: #fff;
+    color: var(--bg-component);
 
     &:hover {
       svg {
-        fill: #fff !important;
+        fill: var(--bg-component) !important;
       }
     }
   }

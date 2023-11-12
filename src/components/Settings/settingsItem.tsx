@@ -1,8 +1,8 @@
-import { observer } from "mobx-react-lite";
-import { FC } from "react";
-import { settingsStore } from "../../store/settingsStore";
-import { ISettings } from "../../types/settings";
-import SwitchBtn from "../UIKit/SwitchBtn/SwitchBtn";
+import { observer } from 'mobx-react-lite'
+import { FC } from 'react'
+import { settingsStore } from '../../store/settingsStore'
+import { ISettings } from '../../types/settings'
+import SwitchBtn from '../UIKit/SwitchBtn/SwitchBtn'
 
 import cl from './Settings.module.scss'
 

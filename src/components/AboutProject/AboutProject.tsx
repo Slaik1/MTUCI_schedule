@@ -11,7 +11,7 @@ const AboutProject:FC = () => {
                 просмотра рассписания пар университета СКФ МТУСИ.
                 Если вы увидели некорректную работу сайта сообщите о ней. Это улучшит работу сайта.
             </p>
-            <a href="https://github.com/Slaik1/MTUCI_schedule/issues">Сообщить об ошибке</a>
+            <a href='https://github.com/Slaik1/MTUCI_schedule/issues'>Сообщить об ошибке</a>
             <div className={cl.icons}>
                 <ReactSVG src='./svg/about/react.svg'/>
                 <ReactSVG src='./svg/about/typescript.svg'/>
