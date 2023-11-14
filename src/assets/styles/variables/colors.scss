@@ -23,6 +23,7 @@ html[data-theme='light'] {
   --border-component: var(--wite100);
   --border-component-hover: var(--wite200);
   --font: var(--black200);
+  --font-hover: var(--black500);
   --aditional: var(--blue);
   --aditional-hover: var(--blue100);
 }
@@ -33,6 +34,7 @@ html[data-theme='dark'] {
   --border-component: var(--balck400);
   --border-component-hover: var(--balck500);
   --font: var(--wite100);
+  --font-hover: var(--wite200);
   --aditional: var(--yellow);
   --aditional-hover: var(--yellow100);
 }

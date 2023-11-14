@@ -6,13 +6,12 @@ import ScheduleService from '../../api/ScheduleService'
 import {TTableDataList} from '../../types/schedule'
 import Table from './Table/Table'
 import cl from './Schedule.module.scss'
-import Header from './Header/Header'
+import Header from '../Header/Header'
 
 const scheduleService = new ScheduleService()
 
 const Schedule = () => {
-    const [isSettingsOpen, setIsSettingsOpen] = useState(false)
-    const [isAboutProjectOpen, setIsAboutProjectOpen] = useState(false)
+
     const [scheduleDataList, setScheduleDataList] = useState<TTableDataList>([])
 
     const fetchSchedule = async () => {
@@ -21,7 +20,7 @@ const Schedule = () => {
             setScheduleDataList(response)
         } catch (error) {
         } finally {
-            
+
         }
     }
 
@@ -31,8 +30,6 @@ const Schedule = () => {
 
     return (
         <div className={cl.wrapper}>
-            <Header setIsAboutProjectOpen={setIsAboutProjectOpen} setIsSettingsOpen={setIsSettingsOpen}/>
-
             <div className={cl.container}>
                 {
                     scheduleDataList
@@ -42,18 +39,6 @@ const Schedule = () => {
                         <p>Не удалось загрузить рассписание. Проверьте настройки</p>
                 }
             </div>
-            {
-                isSettingsOpen &&
-                <Modal setIsOpen={setIsSettingsOpen}>
-                    <Settings/>
-                </Modal>
-            }
-            {
-                isAboutProjectOpen &&
-                <Modal setIsOpen={setIsAboutProjectOpen}>
-                    <AboutProject/>
-                </Modal>
-            }
         </div>
     )
 }

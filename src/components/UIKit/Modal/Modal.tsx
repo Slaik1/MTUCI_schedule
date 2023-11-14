@@ -16,7 +16,6 @@ const Modal: FC<ModalProps> = ({children, setIsOpen, resetData}) => {
         document.body.style.overflow = 'auto'
     }
 
-
     return (
         <div className={cl.wrapper} onClick={closeModal}>
             <div className={cl.modal} onClick={(event) => event.stopPropagation()}>
