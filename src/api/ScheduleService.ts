@@ -7,7 +7,7 @@ import { BASE_URL } from '../constants'
 export default class ScheduleService {
     async getSchedule(): Promise<TTableDataList> {
         const settingsString = JSON.stringify(settingsStore.settings)
-        const response = await axios.get('http://192.168.0.107:4200' + '/schedule', {
+        const response = await axios.get(BASE_URL + '/schedule', {
             params: {
                 data: settingsString
             }
