@@ -1,4 +1,4 @@
-import {TOptions} from "../UIKit/SelectInput/selectInput.model";
+import {TOptions} from '../UIKit/SelectInput/selectInput.model'
 
 export const TEACHERS: TOptions = [
     {

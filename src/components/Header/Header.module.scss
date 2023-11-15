@@ -18,7 +18,6 @@
       height: 50px;
       margin-right: 20px;
       transition: all 0.3s ease;
-      animation: color_switch 3s ease infinite;
     }
 
     .title {
@@ -26,7 +25,6 @@
       flex-direction: column;
       justify-content: center;
       transition: all 0.3s ease;
-
 
       h1 {
         font-size: 20px;
@@ -84,16 +82,16 @@
       }
     }
 
+
   }
   svg {
     height: 25px;
     width: 25px;
     cursor: pointer;
     fill: var(--font);
-    transition: all 0.4s ease;
-    &:hover {
-      fill: var(--font-hover);
-    }
+  }
+  .burger {
+    display: none;
   }
 }
 
@@ -159,6 +157,9 @@
   .header {
     ul {
       display: none;
+    }
+    .burger {
+      display: block;
     }
   }
 }

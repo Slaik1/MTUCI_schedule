@@ -1,12 +1,8 @@
 import React, {useEffect, useState} from 'react'
-import Modal from '../UIKit/Modal/Modal'
-import Settings from '../Settings/Settings'
-import AboutProject from '../AboutProject/AboutProject'
 import ScheduleService from '../../api/ScheduleService'
 import {TTableDataList} from '../../types/schedule'
 import Table from './Table/Table'
 import cl from './Schedule.module.scss'
-import Header from '../Header/Header'
 
 const scheduleService = new ScheduleService()
 

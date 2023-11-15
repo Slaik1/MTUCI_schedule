@@ -1,13 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react'
+import {observer} from 'mobx-react-lite'
+import SelectInput from '../UIKit/SelectInput/SelectInput'
+import Table from '../Schedule/Table/Table'
+import ScheduleService from '../../api/ScheduleService'
+import {TTableDataList} from '../../types/schedule'
+import {settingsStore} from '../../store/settingsStore'
 import cl from './Teacher.module.scss'
-import SelectInput from "../UIKit/SelectInput/SelectInput";
-import {TEACHERS} from "./constants";
-import Schedule from "../Schedule/Schedule";
-import Table from "../Schedule/Table/Table";
-import ScheduleService from "../../api/ScheduleService";
-import {TTableDataList} from "../../types/schedule";
-import {settingsStore} from "../../store/settingsStore";
-import {observer} from "mobx-react-lite";
+import {TEACHERS} from './constants'
 
 const scheduleService = new ScheduleService()
 
@@ -27,7 +26,7 @@ const Teacher = () => {
 
     useEffect(() => {
         fetchTeacherSchedule()
-    }, [settings.teacher]);
+    }, [settings.teacher])
 
     return (
         <div className={cl.wrapper}>

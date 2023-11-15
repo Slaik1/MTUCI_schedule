@@ -1,12 +1,13 @@
 import React, {FC, useState} from 'react'
 import {ReactSVG} from 'react-svg'
+import {createPortal} from 'react-dom'
+import {Link} from 'react-router-dom'
+import Modal from '../UIKit/Modal/Modal'
+import Settings from '../Settings/Settings'
+import AboutProject from '../AboutProject/AboutProject'
 import {useTheme} from '../../hooks/useTheme'
+import SidePanel from '../SidePanel/SidePanel'
 import cl from './Header.module.scss'
-import Modal from "../UIKit/Modal/Modal";
-import Settings from "../Settings/Settings";
-import AboutProject from "../AboutProject/AboutProject";
-import {createPortal} from "react-dom";
-import {Link} from "react-router-dom";
 
 
 const Header: FC = () => {
@@ -14,7 +15,7 @@ const Header: FC = () => {
     const {theme, setTheme} = useTheme()
     const [isSettingsOpen, setIsSettingsOpen] = useState(false)
     const [isAboutProjectOpen, setIsAboutProjectOpen] = useState(false)
-
+    const [isSidePanelOpen, setIsSidePanelOpen] = useState(false)
     const portal: HTMLElement | null = document.getElementById('portal')
 
     const changeTheme = () => {
@@ -41,7 +42,7 @@ const Header: FC = () => {
                     <ReactSVG src='svg/header_sun.svg' onClick={changeTheme}/>
                 }
             </ul>
-            <ReactSVG src='svg/header_burger.svg'/>
+            <ReactSVG onClick={() => setIsSidePanelOpen(true)} className={cl.burger} src='svg/header_burger.svg'/>
             {
                 isSettingsOpen && portal &&
                 createPortal(
@@ -57,6 +58,13 @@ const Header: FC = () => {
                     <Modal setIsOpen={setIsAboutProjectOpen}>
                         <AboutProject/>
                     </Modal>,
+                    portal
+                )
+            }
+            {
+                isSidePanelOpen && portal &&
+                createPortal(
+                    <SidePanel setIsOpen={setIsSidePanelOpen}/>,
                     portal
                 )
             }

@@ -12,7 +12,10 @@
 }
 
 .input {
-  width: 500px;
   height: 38px;
   margin-bottom: 20px;
+  width: 500px;
+  @media (max-width: 606px) {
+    width: 95dvw;
+  }
 }
