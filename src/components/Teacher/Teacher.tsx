@@ -7,12 +7,14 @@ import {TTableDataList} from '../../types/schedule'
 import {settingsStore} from '../../store/settingsStore'
 import cl from './Teacher.module.scss'
 import {TEACHERS} from './constants'
+import TableLoader from "../Schedule/TableLoader/TableLoader";
 
 const scheduleService = new ScheduleService()
 
 const Teacher = () => {
     const {settings, setSettingsItem} = settingsStore
-    const [teacherSchedule, setTeacherSchedule] = useState<TTableDataList>([])
+    const [teacherSchedule, setTeacherSchedule] = useState<TTableDataList>()
+    const [isLoader, setIsLoader] = useState(true)
 
     const fetchTeacherSchedule = async () => {
         try {
@@ -20,7 +22,7 @@ const Teacher = () => {
             setTeacherSchedule(response)
         } catch (error) {
         } finally {
-
+            setIsLoader(false)
         }
     }
 
@@ -38,10 +40,12 @@ const Teacher = () => {
                 title={'Выберите преподавателя'}
             />
             {
-                teacherSchedule &&
-                teacherSchedule.map((el , i) =>
-                    <Table scheduleData={el} key={i}/>
-                )
+                teacherSchedule ?
+                    teacherSchedule.map((el, i) =>
+                        <Table scheduleData={el} key={i}/>
+                    )
+                    :
+                    <TableLoader/>
             }
         </div>
     )

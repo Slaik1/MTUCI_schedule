@@ -14,6 +14,7 @@
     "classnames": "^2.3.2",
     "mobx-react-lite": "^4.0.5",
     "react": "^18.2.0",
+    "react-content-loader": "^6.2.1",
     "react-dom": "^18.2.0",
     "react-portal": "^4.2.2",
     "react-router-dom": "^6.18.0",

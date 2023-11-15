@@ -25,14 +25,14 @@ const SidePanel: FC<SidePanelProps> = ({setIsOpen}) => {
     }
 
     useEffect(() => {
-        document.body.style.overflow = 'hidden'
+        // document.body.style.overflow = 'hidden'
     }, [])
 
 
     const closePanel = (event: React.MouseEvent) => {
         event.stopPropagation()
         setIsOpen(false)
-        document.body.style.overflow = 'auto'
+        // document.body.style.overflow = 'auto'
     }
 
     const openSettings = (event:React.MouseEvent) => {
