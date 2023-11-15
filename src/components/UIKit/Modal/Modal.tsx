@@ -9,14 +9,17 @@ interface ModalProps {
 
 const Modal: FC<ModalProps> = ({children, setIsOpen, resetData}) => {
 
-    useEffect(() => {
+    useEffect(() =>  {
         document.body.style.overflow = 'hidden'
+
+        return () => {
+            document.body.style.overflow = 'auto'
+        }
     }, [])
 
     const closeModal = (event:React.MouseEvent) => {
         event.stopPropagation()
         setIsOpen((prev:boolean) => !prev)
-        document.body.style.overflow = 'auto'
     }
 
     return (

@@ -3,7 +3,7 @@ import ScheduleService from '../../api/ScheduleService'
 import {TTableDataList} from '../../types/schedule'
 import Table from './Table/Table'
 import cl from './Schedule.module.scss'
-import TableLoader from "./TableLoader/TableLoader";
+import TableLoader from './TableLoader/TableLoader'
 
 const scheduleService = new ScheduleService()
 

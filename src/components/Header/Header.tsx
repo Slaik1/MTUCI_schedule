@@ -9,7 +9,6 @@ import {useTheme} from '../../hooks/useTheme'
 import SidePanel from '../SidePanel/SidePanel'
 import cl from './Header.module.scss'
 
-
 const Header: FC = () => {
 
     const {theme, setTheme} = useTheme()
@@ -62,11 +61,17 @@ const Header: FC = () => {
                 )
             }
             {
-                isSidePanelOpen && portal &&
-                createPortal(
-                    <SidePanel setIsOpen={setIsSidePanelOpen}/>,
-                    portal
-                )
+                isSidePanelOpen &&
+                <SidePanel
+                    isSettings={isSettingsOpen}
+                    setIsSettings={setIsSettingsOpen}
+                    isAbout={isAboutProjectOpen}
+                    setIsSAbout={setIsAboutProjectOpen}
+                    theme={theme}
+                    changeTheme={changeTheme}
+                    setIsOpen={setIsSidePanelOpen}
+                    isOpen={isSidePanelOpen}
+                />
             }
         </header>
 

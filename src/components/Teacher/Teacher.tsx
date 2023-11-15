@@ -1,17 +1,17 @@
-import React, {useEffect, useState} from 'react'
+import React, {FC, useEffect, useState} from 'react'
 import {observer} from 'mobx-react-lite'
 import SelectInput from '../UIKit/SelectInput/SelectInput'
 import Table from '../Schedule/Table/Table'
 import ScheduleService from '../../api/ScheduleService'
 import {TTableDataList} from '../../types/schedule'
 import {settingsStore} from '../../store/settingsStore'
+import TableLoader from '../Schedule/TableLoader/TableLoader'
 import cl from './Teacher.module.scss'
 import {TEACHERS} from './constants'
-import TableLoader from "../Schedule/TableLoader/TableLoader";
 
 const scheduleService = new ScheduleService()
 
-const Teacher = () => {
+const Teacher:FC = () => {
     const {settings, setSettingsItem} = settingsStore
     const [teacherSchedule, setTeacherSchedule] = useState<TTableDataList>()
     const [isLoader, setIsLoader] = useState(true)
@@ -50,5 +50,4 @@ const Teacher = () => {
         </div>
     )
 }
-
 export default observer(Teacher)

@@ -1,47 +1,53 @@
-import React, {FC, useEffect, useState} from 'react'
-
-import {createPortal} from 'react-dom'
+import React, {FC, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import {ReactSVG} from 'react-svg'
-import Settings from '../Settings/Settings'
-import AboutProject from '../AboutProject/AboutProject'
-import Modal from '../UIKit/Modal/Modal'
-import {useTheme} from '../../hooks/useTheme'
+import classNames from 'classnames'
 import cl from './SidePanel.module.scss'
+import './animation.scss'
 
 interface SidePanelProps {
-    setIsOpen: SetAction<boolean>;
+    isOpen: boolean;
+    setIsOpen: (value:boolean) => void;
+    isSettings: boolean;
+    setIsSettings: (value:boolean) => void;
+    isAbout: boolean;
+    setIsSAbout: (value:boolean) => void;
+    theme: string;
+    changeTheme: () => void;
 }
 
-const SidePanel: FC<SidePanelProps> = ({setIsOpen}) => {
+const SidePanel: FC<SidePanelProps> = ({isOpen, setIsOpen, isSettings, setIsSettings, isAbout, setIsSAbout, theme, changeTheme}) => {
 
-    const {theme, setTheme} = useTheme()
-    const [isSettingsOpen, setIsSettingsOpen] = useState(false)
-    const [isAboutProjectOpen, setIsAboutProjectOpen] = useState(false)
-    const portal: HTMLElement | null = document.getElementById('portal')
-
-    const changeTheme = () => {
-        setTheme((prev) => prev === 'light' ? 'dark' : 'light')
-    }
-
-    useEffect(() => {
-        // document.body.style.overflow = 'hidden'
+    useEffect(() =>  {
+        document.body.style.overflow = 'hidden'
+        setTimeout(() => {}, 300)
+        return () => {
+            document.body.style.overflow = 'auto'
+        }
     }, [])
 
-
-    const closePanel = (event: React.MouseEvent) => {
-        event.stopPropagation()
+    const inputClasses = classNames({
+        [cl.container]: isOpen,
+        [cl.active]: isOpen,
+    })
+    const closePanel = (event?:React.MouseEvent) => {
+        event &&
+            event.stopPropagation()
         setIsOpen(false)
-        // document.body.style.overflow = 'auto'
     }
 
-    const openSettings = (event:React.MouseEvent) => {
-        closePanel(event)
-        setIsSettingsOpen(true)
+    const openSettings = () => {
+        closePanel()
+        setIsSettings(true)
+    }
+
+    const openAbout = () => {
+        closePanel()
+        setIsSAbout(true)
     }
 
     return (
-        <div className={cl.container} onClick={(event) => closePanel(event)}>
+        <div className={inputClasses} onClick={(event) => closePanel(event)}>
             <div className={cl.wrapper} onClick={(event) => event.stopPropagation()}>
                 <ul>
                     <li onClick={(event) => closePanel(event)}>
@@ -50,11 +56,11 @@ const SidePanel: FC<SidePanelProps> = ({setIsOpen}) => {
                             Преподаватели
                         </Link>
                     </li>
-                    <li onClick={(event) => openSettings(event)}>
+                    <li onClick={openSettings}>
                         <ReactSVG src='svg/sidePanel_settings.svg'/>
                         Настройки
                     </li>
-                    <li onClick={() => setIsAboutProjectOpen(true)}>
+                    <li onClick={openAbout}>
                         <ReactSVG src='svg/sidePanel_lamp.svg'/>
                         О проекте
                     </li>
@@ -66,24 +72,6 @@ const SidePanel: FC<SidePanelProps> = ({setIsOpen}) => {
                     }
                 </ul>
             </div>
-            {
-                isSettingsOpen && portal &&
-                createPortal(
-                    <Modal setIsOpen={setIsSettingsOpen}>
-                        <Settings/>
-                    </Modal>,
-                    portal
-                )
-            }
-            {
-                isAboutProjectOpen && portal &&
-                createPortal(
-                    <Modal setIsOpen={setIsAboutProjectOpen}>
-                        <AboutProject/>
-                    </Modal>,
-                    portal
-                )
-            }
         </div>
     )
 }

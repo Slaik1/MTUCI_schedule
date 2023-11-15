@@ -1,22 +1,23 @@
 .container {
   position: fixed;
-  display: flex;
-  justify-content: flex-end;
   top: 0;
+  left: 0;
   right: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background: #00000060;
+  bottom: 0;
+  z-index: 3;
 
   .wrapper {
-    position: relative;
+    position: fixed;
+    top: 0;
+    right: -60dvw;
     height: 100%;
-    width: 60%;
+    width: 60dvw;
+    padding: 20px;
     background: var(--bg-component);
+    transition: all 3s ease;
 
     ul {
-      padding: 0  15px;
+
       li {
         display: flex;
         align-items: center;
@@ -33,7 +34,8 @@
           color: var(--font);
         }
       }
-      svg{
+
+      svg {
         display: flex;
         align-items: center;
         width: 23px;
@@ -47,6 +49,7 @@
         position: absolute;
         left: 15px;
         bottom: 15px;
+
         svg {
           width: 30px;
           height: 30px;
@@ -55,11 +58,18 @@
     }
   }
 }
+.active {
+  .wrapper {
+    animation: open 0.4s ease;
+    transform: translateX(-60dvw);
+  }
+}
 
-@media (max-width: 375px) {
-  .container {
-    .wrapper {
-      width: 70%;
-    }
+@keyframes open {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-60dvw);
   }
 }

@@ -48,7 +48,7 @@
     }
   }
 
-  ul {
+  .links_list {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -155,7 +155,7 @@
 }
 @media (max-width: 606px) {
   .header {
-    ul {
+    .links_list {
       display: none;
     }
     .burger {
