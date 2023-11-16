@@ -1,4 +1,29 @@
 import {TOptions} from '../UIKit/SelectInput/selectInput.model'
+import {SettingsItemProps} from "./settingsItem";
+
+export const settingsList: SettingsItemProps[] = [
+    {
+        title: 'Подсвечивать сегодняшний день',
+        storeKey: 'highlightToday'
+    },
+    {
+        title: 'Сегодняшний день в начале',
+        storeKey: 'setTodayStart'
+    },
+    {
+        title: 'Развернуть сегодняшний день',
+        storeKey: 'expandToday'
+    },
+    {
+        title: 'Развернуть все дни',
+        storeKey: 'expandAllDays'
+    },
+    {
+        title: 'Не показывать доп. преподователей',
+
+    }
+]
+
 
 export const DAY_LENGTH_INPUT_DATA: TOptions = [
     {

@@ -32,7 +32,7 @@ const Table: FC<TableProps> = ({scheduleData}) => {
         [cl.header_open]: isAdditionalInfo,
         [cl.today]: settings.highlightToday && isToday
     })
-
+    console.log(window.location.pathname)
     return (
         <div className={inputClasses}>
             <div className={cl.header} onClick={() => setIsAdditionalInfo((prev) => !prev)}>
@@ -43,7 +43,14 @@ const Table: FC<TableProps> = ({scheduleData}) => {
                         <p>Пара</p>
                         <p>Дисциплина</p>
                         <p>Вид</p>
-                        <p>Препод</p>
+                        {
+                            window.location.pathname === '/teacher'
+                                ?
+                                <p>Группа</p>
+                                :
+                                <p>Препод</p>
+                        }
+
                         <p>Кабинет</p>
                     </div>
                     :
