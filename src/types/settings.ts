@@ -6,4 +6,5 @@ export interface ISettings {
     expandAllDays: boolean;
     specialization: string;
     group: string;
+    teacher: string;
 }

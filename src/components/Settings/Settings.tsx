@@ -56,10 +56,11 @@ const Settings: FC = () => {
                 title={'Количество дней в рассписании'}
             />
             <div className={cl.settings_list}>
-                {settingsList.map((el) => 
+                {settingsList.map((el,i ) =>
                     <SettingsItem 
                         title={el.title}
                         storeKey={el.storeKey}
+                        key={i}
                     />
                 )}
             </div>
