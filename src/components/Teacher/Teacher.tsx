@@ -11,11 +11,10 @@ import {TEACHERS} from './constants'
 
 const scheduleService = new ScheduleService()
 
-const Teacher:FC = () => {
+const Teacher: FC = () => {
     const {settings, setSettingsItem} = settingsStore
     const [teacherSchedule, setTeacherSchedule] = useState<TTableDataList>()
     const [isLoader, setIsLoader] = useState(true)
-
     const fetchTeacherSchedule = async () => {
         try {
             const response = await scheduleService.getTeacherSchedule(settings.teacher)
@@ -23,6 +22,7 @@ const Teacher:FC = () => {
         } catch (error) {
         } finally {
             setIsLoader(false)
+
         }
     }
 
@@ -46,6 +46,12 @@ const Teacher:FC = () => {
                     )
                     :
                     <TableLoader/>
+
+
+            }
+            {
+                teacherSchedule?.length === 0 &&
+                <p>Рассписание отсутствует</p>
             }
         </div>
     )

@@ -1,32 +1,10 @@
 import React, {FC} from 'react'
 import {observer} from 'mobx-react-lite'
-
 import SelectInput from '../UIKit/SelectInput/SelectInput'
-
 import {settingsStore} from '../../store/settingsStore'
 import cl from './Settings.module.scss'
-import {DAY_LENGTH_INPUT_DATA, GROUP_INPUT_DATA, SPECIALIZATION_INPUT_DATA} from './constants'
-import SettingsItem, { SettingsItemProps } from './settingsItem'
-
-const settingsList: SettingsItemProps[] = [
-    {
-        title: 'Подсвечивать сегодняшний день',
-        storeKey: 'highlightToday'
-    },
-    {
-        title: 'Сегодняшний день в начале',
-        storeKey: 'setTodayStart'
-    },
-    {
-        title: 'Развернуть сегодняшний день',
-        storeKey: 'expandToday'
-    },
-    {
-        title: 'Развернуть все дни',
-        storeKey: 'expandAllDays'
-    },
-]
-
+import {DAY_LENGTH_INPUT_DATA, GROUP_INPUT_DATA, settingsList, SPECIALIZATION_INPUT_DATA} from './constants'
+import SettingsItem from './settingsItem'
 
 const Settings: FC = () => {
     const {settings, setSettingsItem} = settingsStore
