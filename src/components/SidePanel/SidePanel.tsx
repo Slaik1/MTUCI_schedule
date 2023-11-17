@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom'
 import {ReactSVG} from 'react-svg'
 import classNames from 'classnames'
 import cl from './SidePanel.module.scss'
-import './animation.scss'
 
 interface SidePanelProps {
     isOpen: boolean;
