@@ -2,6 +2,7 @@
   --wite: #fff;
   --wite100: #e3e3e3;
   --wite200: #cbcbcb;
+  --wite300: #ececec;
 
   --black: #000;
   --black100: #1E1E1E;
@@ -9,6 +10,7 @@
   --balck300: #2C2C2C;
   --balck400: #555;
   --balck500: #777;
+  --balck600: #171717;
 
   --blue: #2383e8;
   --blue100: #cadcee;
@@ -20,6 +22,7 @@
 html[data-theme='light'] {
   --bg: var(--wite100);
   --bg-component: var(--wite);
+  --bg-component-hover: var(--wite300);
   --border-component: var(--wite100);
   --border-component-hover: var(--wite200);
   --font: var(--black200);
@@ -31,6 +34,7 @@ html[data-theme='light'] {
 html[data-theme='dark'] {
   --bg: var(--balck300);
   --bg-component: var(--black100);
+  --bg-component-hover: var(--balck600);
   --border-component: var(--balck400);
   --border-component-hover: var(--balck500);
   --font: var(--wite100);
