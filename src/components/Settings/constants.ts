@@ -19,8 +19,8 @@ export const settingsList: SettingsItemProps[] = [
         storeKey: 'expandAllDays'
     },
     {
-        title: 'Не показывать доп. преподователей',
-
+        title: 'Скрыть доп. преподователей',
+        storeKey: 'hideAdditionalTeacher'
     }
 ]
 

@@ -32,7 +32,7 @@ const Table: FC<TableProps> = ({scheduleData}) => {
         [cl.header_open]: isAdditionalInfo,
         [cl.today]: settings.highlightToday && isToday
     })
-    console.log(window.location.pathname)
+
     return (
         <div className={inputClasses}>
             <div className={cl.header} onClick={() => setIsAdditionalInfo((prev) => !prev)}>
@@ -58,7 +58,17 @@ const Table: FC<TableProps> = ({scheduleData}) => {
                         <p>{scheduleData[0].date}</p>
                         <p>{scheduleData[0].day}</p>
                         <p>{scheduleData[0].lesson} пара в {scheduleData[0].room} кабинете</p>
-                        <p>{scheduleData[0].discipline}</p>
+                        <p>
+                            {scheduleData[0].discipline}
+                            {
+                                scheduleData[0].changeStatus
+                                    ?
+
+                                    <span>&nbsp;Изменения!</span>
+                                    :
+                                    ''
+                            }
+                        </p>
                         <ReactSVG className={cl.openBtn} src='./svg/input_arrow.svg'/>
                     </div>
                 }

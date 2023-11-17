@@ -33,6 +33,12 @@
         word-break: break-word;
         white-space: nowrap;
         text-align: center;
+
+        span {
+          color: var(--aditional);
+          font-weight: 600;
+        }
+
         &:nth-child(4n) {
           border-right: none  ;
         }

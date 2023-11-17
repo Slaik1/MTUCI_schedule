@@ -6,13 +6,20 @@ interface RowProps {
 }
 
 const Row:FC<RowProps> = ({data}) => {
+    console.log(data.changeStatus)
     return (
         <div className={cl.row}>
             <p>{data.lesson}</p>
             <p>{data.discipline}</p>
             <p>{data.type}</p>
             <p>{data.teacher}</p>
-            <p>{data.room}</p>
+            {
+                data.changeStatus
+                    ?
+                    <p>{data.changeStatus}</p>
+                    :
+                    <p>{data.room}</p>
+            }
         </div>
     )
 }

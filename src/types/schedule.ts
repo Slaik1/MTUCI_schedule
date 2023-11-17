@@ -7,6 +7,7 @@ export interface IRow {
     room:string;
     teacher:string;
     type: string;
+    changeStatus?: string
 }
 
 export type TTable = IRow[]

@@ -9,10 +9,11 @@ export const getSettingsFromStorage = (key: string): ISettings => {
             highlightToday: true,
             expandToday: true,
             expandAllDays: false,
+            hideAdditionalTeacher: false,
             specialization: 'ivt',
             group:'ДП-41',
             setTodayStart: true,
-            teacher: 'Чикалов А.Н.'
+            teacher: 'Чикалов А.Н.',
         }
         setStorageSettings(key, defaultSettings)
         return defaultSettings
