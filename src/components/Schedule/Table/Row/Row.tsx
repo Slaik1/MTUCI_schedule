@@ -6,7 +6,6 @@ interface RowProps {
 }
 
 const Row:FC<RowProps> = ({data}) => {
-    console.log(data.changeStatus)
     return (
         <div className={cl.row}>
             <p>{data.lesson}</p>

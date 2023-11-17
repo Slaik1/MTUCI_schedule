@@ -1,5 +1,5 @@
 import {TOptions} from '../UIKit/SelectInput/selectInput.model'
-import {SettingsItemProps} from "./settingsItem";
+import {SettingsItemProps} from './settingsItem'
 
 export const settingsList: SettingsItemProps[] = [
     {

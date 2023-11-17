@@ -7,15 +7,13 @@ import cl from './SidePanel.module.scss'
 interface SidePanelProps {
     isOpen: boolean;
     setIsOpen: (value:boolean) => void;
-    isSettings: boolean;
     setIsSettings: (value:boolean) => void;
-    isAbout: boolean;
     setIsSAbout: (value:boolean) => void;
     theme: string;
     changeTheme: () => void;
 }
 
-const SidePanel: FC<SidePanelProps> = ({isOpen, setIsOpen, isSettings, setIsSettings, isAbout, setIsSAbout, theme, changeTheme}) => {
+const SidePanel: FC<SidePanelProps> = ({isOpen, setIsOpen, setIsSettings, setIsSAbout, theme, changeTheme}) => {
 
     useEffect(() =>  {
         document.body.style.overflow = 'hidden'

@@ -63,9 +63,7 @@ const Header: FC = () => {
             {
                 isSidePanelOpen &&
                 <SidePanel
-                    isSettings={isSettingsOpen}
                     setIsSettings={setIsSettingsOpen}
-                    isAbout={isAboutProjectOpen}
                     setIsSAbout={setIsAboutProjectOpen}
                     theme={theme}
                     changeTheme={changeTheme}
