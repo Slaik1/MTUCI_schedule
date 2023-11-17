@@ -1,4 +1,4 @@
-# MTUCI Shedule
+# MTUCI Schedule
 ## _website for viewing the schedule_
 - The idea was to redesign the schedule for my university for ease of use both on the PC and on the mobile. Here is the [reference](http://www.skf-mtusi.ru/?page_id=477).
 - You can customize exactly how the schedule should look like and also change the color theme of the web site.
