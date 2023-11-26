@@ -16,7 +16,7 @@ export default class ScheduleService {
     }
     async getTeacherSchedule(teacher:string): Promise<TTableDataList> {
         const settingsString = JSON.stringify({...settingsStore.settings})
-        const response = await axios.get(BASE_URL + '/teacher', {
+        const response = await axios.get(BASE_URL + '/lecturer', {
             params: {
                 data: settingsString
             }

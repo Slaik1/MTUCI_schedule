@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react'
+import {observer} from 'mobx-react-lite'
 import ScheduleService from '../../api/ScheduleService'
 import {TTableDataList} from '../../types/schedule'
+import {settingsStore} from '../../store/settingsStore'
 import Table from './Table/Table'
 import cl from './Schedule.module.scss'
 import TableLoader from './TableLoader/TableLoader'
@@ -11,7 +13,8 @@ const Schedule = () => {
 
     const [scheduleDataList, setScheduleDataList] = useState<TTableDataList>()
     const [isLoader, setIsLoader] = useState(true)
-
+    const {settings} = settingsStore
+    const {group, scheduleLength, hideAdditionalTeacher, setTodayStart} = settings
     const fetchSchedule = async () => {
         try {
             const response = await scheduleService.getSchedule()
@@ -24,9 +27,9 @@ const Schedule = () => {
 
     useEffect(() => {
         fetchSchedule()
-    }, [])
+    }, [group, scheduleLength, hideAdditionalTeacher, setTodayStart])
 
-    return (
+    return(
         <div className={cl.wrapper}>
             <div className={cl.container}>
                 {
@@ -41,4 +44,4 @@ const Schedule = () => {
     )
 }
 
-export default Schedule
+export default observer(Schedule)

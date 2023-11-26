@@ -154,6 +154,10 @@ export const TEACHERS: TOptions = [
         label: 'Чикалов А.Н.'
     },
     {
+        value: 'Шухардин А.Н.',
+        label: 'Шухардин А.Н.'
+    },
+    {
         value: 'Швидченко С.А.',
         label: 'Швидченко С.А.'
     },

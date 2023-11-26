@@ -28,7 +28,7 @@ const Teacher: FC = () => {
 
     useEffect(() => {
         fetchTeacherSchedule()
-    }, [settings.teacher])
+    }, [settings.teacher, settings.setTodayStart])
 
     return (
         <div className={cl.wrapper}>

@@ -2,6 +2,7 @@ import React, {FC, useEffect, useState} from 'react'
 import classNames from 'classnames'
 import {ReactSVG} from 'react-svg'
 import {CSSTransition, TransitionGroup} from 'react-transition-group'
+import {observer} from 'mobx-react-lite'
 import {TTable} from '../../../types/schedule'
 import {settingsStore} from '../../../store/settingsStore'
 import cl from './Table.module.scss'
@@ -16,27 +17,32 @@ interface TableProps {
 const Table: FC<TableProps> = ({scheduleData}) => {
 
     const {settings} = settingsStore
-    const [isToday] = useState(scheduleData[0].date === getCurrentDate())
-    const [isAdditionalInfo, setIsAdditionalInfo] = useState(settings.expandAllDays)
+    const {expandAllDays, expandToday, highlightToday} = settings
+    const [isToday, setIsToday] = useState(false)
+    const [isAdditionalInfo, setIsAdditionalInfo] = useState(expandAllDays)
 
-    const shouldExpand = (): boolean => {
-        return settings.expandAllDays || (settings.expandToday && isToday)
-    }
 
     useEffect(() => {
+        const date = getCurrentDate()
+        setIsToday(scheduleData[0].date === date)
         setIsAdditionalInfo(shouldExpand())
-    }, [settings.expandAllDays, settings.expandToday])
+    }, [scheduleData, expandToday, expandAllDays, highlightToday])
+
+
+    const shouldExpand = (): boolean => {
+        return expandAllDays || (expandToday && isToday)
+    }
 
     const inputClasses = classNames({
         [cl.wrapper]: true,
         [cl.header_open]: isAdditionalInfo,
-        [cl.today]: settings.highlightToday && isToday
+        [cl.today]: highlightToday && isToday
     })
+
 
     return (
         <div className={inputClasses}>
             <div className={cl.header} onClick={() => setIsAdditionalInfo((prev) => !prev)}>
-
                 {isAdditionalInfo
                     ?
                     <div className={cl.titleWrapper}>
@@ -91,4 +97,4 @@ const Table: FC<TableProps> = ({scheduleData}) => {
     )
 }
 
-export default Table
+export default observer(Table)
