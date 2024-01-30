@@ -1,10 +1,15 @@
-const date = new Date()
-
 export const getCurrentDate = (): string => {
-    let day = String(date.getDate())
-    const month = String(date.getMonth() + 1)
+    const date = new Date()
+    let day: number | string = date.getDate()
+    let month: number | string = date.getMonth() + 1
 
-    if (day.length === 1) day = day.padStart(2, '0')
+    if (day < 10) {
+        day = '0' + day
+    }
+    
+    if (month < 10) {
+        month = '0' + month
+    }
 
     return `${day}.${month}`
 }

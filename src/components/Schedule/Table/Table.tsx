@@ -26,6 +26,7 @@ const Table: FC<TableProps> = ({scheduleData}) => {
         const date = getCurrentDate()
         setIsToday(scheduleData[0].date === date)
         setIsAdditionalInfo(shouldExpand())
+        
     }, [scheduleData, expandToday, expandAllDays, highlightToday])
 
 
