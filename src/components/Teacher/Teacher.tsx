@@ -51,7 +51,7 @@ const Teacher: FC = () => {
             }
             {
                 teacherSchedule?.length === 0 &&
-                <p>Рассписание отсутствует</p>
+                <p>Расписание отсутствует</p>
             }
         </div>
     )

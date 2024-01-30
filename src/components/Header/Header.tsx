@@ -27,7 +27,7 @@ const Header: FC = () => {
                 <ReactSVG src='svg/header_logo.svg'/>
                 <div className={cl.title}>
                     <h1>СКФ МТУСИ</h1>
-                    <p>Рассписание</p>
+                    <p>Расписание</p>
                 </div>
             </Link>
             <ul className={cl.links_list}>

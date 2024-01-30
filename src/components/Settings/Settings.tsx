@@ -31,7 +31,7 @@ const Settings: FC = () => {
                 setValue={(value) => setSettingsItem('scheduleLength', Number(value))}
                 options={DAY_LENGTH_INPUT_DATA}
                 className={cl.input}
-                title={'Количество дней в рассписании'}
+                title={'Количество дней в расписании'}
             />
             <div className={cl.settings_list}>
                 {settingsList.map((el,i ) =>

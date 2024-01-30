@@ -32,4 +32,4 @@ npm run prod
 ```
 ## BTW
 
-If I'm still renting a server, then you can look at the site at [СКФ МТУСИ Рассисание](https://slaik.ru/).
+If I'm still renting a server, then you can look at the site at [СКФ МТУСИ Расписание](https://slaik.ru/).

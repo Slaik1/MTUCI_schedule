@@ -19,7 +19,7 @@ export const settingsList: SettingsItemProps[] = [
         storeKey: 'expandAllDays'
     },
     {
-        title: 'Скрыть доп. преподователей',
+        title: 'Скрыть доп. преподавателей',
         storeKey: 'hideAdditionalTeacher'
     }
 ]
@@ -44,7 +44,7 @@ export const DAY_LENGTH_INPUT_DATA: TOptions = [
     },
     {
         value: 1000,
-        label: 'Всё рассписание'
+        label: 'Всё расписание'
     }
 ]
 
