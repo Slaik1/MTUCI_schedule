@@ -1,6 +1,6 @@
 export interface IOption {
-    value: string | number;
-    label: string;
+  value: string | number;
+  label: string;
 }
 
-export type TOptions = IOption[]
+export type TOptions = IOption[];
