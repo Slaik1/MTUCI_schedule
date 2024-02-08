@@ -23,14 +23,14 @@ const Header: FC = () => {
 
     return (
         <header className={cl.header}>
-            <Link to='/' className={cl.logo_wrapper}>
+            <Link to='/' className={cl.logoWrapper}>
                 <ReactSVG src='svg/header_logo.svg'/>
                 <div className={cl.title}>
                     <h1>СКФ МТУСИ</h1>
                     <p>Расписание</p>
                 </div>
             </Link>
-            <ul className={cl.links_list}>
+            <ul className={cl.linksList}>
                 <li><Link to='/teacher'>Преподаватели</Link></li>
                 <li onClick={() => setIsSettingsOpen(true)}>Настройки</li>
                 <li onClick={() => setIsAboutProjectOpen(true)}>О проекте</li>

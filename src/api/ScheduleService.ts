@@ -12,6 +12,7 @@ export default class ScheduleService {
                 data: settingsString
             }
         })
+
         return response.data
     }
     async getTeacherSchedule(teacher:string): Promise<TTableDataList> {
@@ -21,6 +22,7 @@ export default class ScheduleService {
                 data: settingsString
             }
         })
+
         return response.data
     }
 }

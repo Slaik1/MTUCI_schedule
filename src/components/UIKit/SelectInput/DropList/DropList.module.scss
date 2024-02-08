@@ -1,39 +1,41 @@
-@import "src/assets/styles/variables/helpers";
+@import 'src/assets/styles/variables/helpers.scss';
 
 .dropList {
   position: absolute;
-  left: 0;
-  top: 35px;
   z-index: 2;
-  width: 100%;
+  top: 35px;
+  left: 0;
   max-height: 200px;
+  width: 100%;
+  background: var(--bg-component);
   padding: 10px 0;
   border-radius: 4px;
   border: 1px solid var(--border-component);
   overflow-x: hidden;
   overflow-y: auto;
-  background: var(--bg-component);
+
   @include box-shadow(4px 4px 4px);
 
   .dropItem {
     display: flex;
-    align-items: center;
     justify-content: flex-start;
-    width: 100%;
+    align-items: center;
     height: 30px;
-    padding-left: 10px;
+    width: 100%;
     background: var(--bg-component);
-    cursor: pointer;
+    padding-left: 10px;
     font-size: 15px;
+    cursor: pointer;
 
     &:hover {
+      color: #1e1e1eff;
       background: var(--aditional-hover);
-      color: #1E1E1EFF;
     }
   }
+
   .active {
-    background: var(--aditional) !important;
     color: var(--bg-component);
+    background: var(--aditional) !important;
   }
 }
 

@@ -17,7 +17,8 @@ const SidePanel: FC<SidePanelProps> = ({isOpen, setIsOpen, setIsSettings, setIsS
 
     useEffect(() =>  {
         document.body.style.overflow = 'hidden'
-        setTimeout(() => {}, 300)
+        setTimeout(() => {console.log('hodden')}, 300)
+
         return () => {
             document.body.style.overflow = 'auto'
         }

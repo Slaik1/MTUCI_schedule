@@ -18,6 +18,7 @@ const SettingsItem: FC<SettingsItemProps> =  (props) => {
     } = props
 
     const {setSettingsItem, settings} = settingsStore
+
     return (
         <div className={cl.setting}>
             {title}

@@ -1,26 +1,28 @@
 .row {
-  width: 100%;
-  border-top: 1px solid var(--border-component);
-  background: var(--bg-component);
   display: grid;
-  grid-template-columns: 10% 40% 15% 20% 15%;
+  width: 100%;
+  background: var(--bg-component);
   padding: 20px 0;
+  border-top: 1px solid var(--border-component);
+  grid-template-columns: 10% 40% 15% 20% 15%;
+
   &:last-child {
-    border-radius:0 0 3px 3px;
+    border-radius: 0 0 3px 3px;
   }
+
   p {
-    border-right: 1px solid var(--border-component);
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    width: 100%;
+    color: var(--font);
     font-size: 18px;
+    border-right: 1px solid var(--border-component);
+    text-align: center;
     overflow: hidden;
     word-break: break-word;
     text-overflow: ellipsis;
     hyphens: auto;
-    color: var(--font);
 
     &:last-child {
       border: none;

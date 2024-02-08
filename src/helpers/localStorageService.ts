@@ -15,7 +15,9 @@ export const getSettingsFromStorage = (key: string): ISettings => {
             setTodayStart: true,
             teacher: 'Чикалов А.Н.',
         }
+
         setStorageSettings(key, defaultSettings)
+
         return defaultSettings
     }
 
@@ -24,5 +26,6 @@ export const getSettingsFromStorage = (key: string): ISettings => {
 
 export const setStorageSettings = (key: string, data: ISettings): void => {
     const jsonData = JSON.stringify(data)
+
     localStorage.setItem(key, jsonData)
 }

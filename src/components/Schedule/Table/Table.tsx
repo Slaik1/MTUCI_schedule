@@ -1,13 +1,17 @@
-import React, {FC, useEffect, useState} from 'react'
 import classNames from 'classnames'
+import {observer} from 'mobx-react-lite'
+import React, {FC, useEffect, useState} from 'react'
 import {ReactSVG} from 'react-svg'
 import {CSSTransition, TransitionGroup} from 'react-transition-group'
-import {observer} from 'mobx-react-lite'
-import {TTable} from '../../../types/schedule'
+
 import {settingsStore} from '../../../store/settingsStore'
-import cl from './Table.module.scss'
-import Row from './Row/Row'
+import {TTable} from '../../../types/schedule'
+
 import {getCurrentDate} from './constants'
+import Row from './Row/Row'
+
+import cl from './Table.module.scss'
+
 import './animation.scss'
 
 interface TableProps {
@@ -24,6 +28,7 @@ const Table: FC<TableProps> = ({scheduleData}) => {
 
     useEffect(() => {
         const date = getCurrentDate()
+
         setIsToday(scheduleData[0].date === date)
         setIsAdditionalInfo(shouldExpand())
         
@@ -36,7 +41,7 @@ const Table: FC<TableProps> = ({scheduleData}) => {
 
     const inputClasses = classNames({
         [cl.wrapper]: true,
-        [cl.header_open]: isAdditionalInfo,
+        [cl.headerOpen]: isAdditionalInfo,
         [cl.today]: highlightToday && isToday
     })
 

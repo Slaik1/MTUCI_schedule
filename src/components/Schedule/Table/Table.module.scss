@@ -1,13 +1,13 @@
 .wrapper {
-  margin-bottom: 20px;
   width: 100%;
+  margin-bottom: 20px;
 
   .header {
     width: 100%;
-    padding: 20px 0;
-    text-align: start;
-    font-size: 18px;
     background: var(--bg-component);
+    padding: 20px 0;
+    font-size: 18px;
+    text-align: start;
     cursor: pointer;
     border-radius: 3px;
 
@@ -40,7 +40,7 @@
         }
 
         &:nth-child(4n) {
-          border-right: none  ;
+          border-right: none;
         }
       }
 
@@ -50,12 +50,12 @@
         align-items: center;
 
         div {
-          width: 20px;
           height: 20px;
+          width: 20px;
 
           svg {
-            width: 20px;
             height: 20px;
+            width: 20px;
             fill: #73737300;
             transition: all 0.2s ease;
           }
@@ -65,18 +65,20 @@
   }
 }
 
-.header_open {
-
+.headerOpen {
   .header {
+    background: var(--bg-component-hover);
     font-weight: 500;
     border-radius: 3px 3px 0 0;
-    background: var(--bg-component-hover);
+
     .titleWrapper {
       grid-template-columns: 10% 40% 15% 20% 15% !important;
+
       p {
         border-right: 1px solid var(--border-component) !important;
+
         &:nth-child(5n) {
-          border-right: none  !important;
+          border-right: none !important;
         }
       }
     }
@@ -84,10 +86,9 @@
 }
 
 .today {
-
   .header {
-    background: var(--aditional);
     color: var(--bg-component);
+    background: var(--aditional);
 
     &:hover {
       svg {
@@ -102,6 +103,7 @@
     p {
       font-size: 16px !important;
     }
+
     .header {
       .titleWrapper {
         grid-template-columns: 10% 10% 30% 50%;
@@ -111,7 +113,6 @@
         }
       }
     }
-
   }
 }
 
@@ -120,12 +121,15 @@
     p {
       font-size: 14px !important;
     }
+
     .header {
       .titleWrapper {
         grid-template-columns: 10% 10% 29% 53%;
+
         p {
           white-space: unset;
         }
+
         .openBtn {
           display: none;
         }
@@ -143,7 +147,7 @@
     }
   }
 
-  .header_open {
+  .headerOpen {
     .header {
       .titleWrapper {
         grid-template-columns: 15% 30% 15% 20% 20% !important;
@@ -151,4 +155,3 @@
     }
   }
 }
-

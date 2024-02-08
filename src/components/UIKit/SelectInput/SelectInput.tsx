@@ -40,7 +40,7 @@ const SelectInput:FC<SelectInputProps> = ({className = '', options, value, setVa
                 <p className={cl.input}>
                     {getCurrentLabel()}
                 </p>
-                <ReactSVG className={cl.svg_arrow} src='./svg/input_arrow.svg'/>
+                <ReactSVG className={cl.svgArrow} src='./svg/input_arrow.svg'/>
                 {
                     isInputActive &&
                     <DropList

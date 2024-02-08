@@ -1,12 +1,13 @@
-@import "./assets/styles/main";
+@import './assets/styles/main.scss';
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
 * {
-  box-sizing: border-box;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
-  background: var(--bg);
   color: var(--font);
+  background: var(--bg);
+  font-family: 'Open Sans', sans-serif;
 }

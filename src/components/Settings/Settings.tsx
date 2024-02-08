@@ -33,7 +33,7 @@ const Settings: FC = () => {
                 className={cl.input}
                 title={'Количество дней в расписании'}
             />
-            <div className={cl.settings_list}>
+            <div className={cl.settingsList}>
                 {settingsList.map((el,i ) =>
                     <SettingsItem 
                         title={el.title}

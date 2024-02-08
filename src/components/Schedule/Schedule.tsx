@@ -1,11 +1,14 @@
-import React, {useEffect, useState} from 'react'
 import {observer} from 'mobx-react-lite'
+import React, {useEffect, useState} from 'react'
+
 import ScheduleService from '../../api/ScheduleService'
-import {TTableDataList} from '../../types/schedule'
 import {settingsStore} from '../../store/settingsStore'
+import {TTableDataList} from '../../types/schedule'
+
 import Table from './Table/Table'
-import cl from './Schedule.module.scss'
 import TableLoader from './TableLoader/TableLoader'
+
+import cl from './Schedule.module.scss'
 
 const scheduleService = new ScheduleService()
 
@@ -18,8 +21,10 @@ const Schedule = () => {
     const fetchSchedule = async () => {
         try {
             const response = await scheduleService.getSchedule()
+
             setScheduleDataList(response)
         } catch (error) {
+            console.log('error',error)
         } finally {
             setIsLoader(false)
         }

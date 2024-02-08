@@ -1,13 +1,16 @@
-import React, {FC, useEffect, useState} from 'react'
 import {observer} from 'mobx-react-lite'
-import SelectInput from '../UIKit/SelectInput/SelectInput'
-import Table from '../Schedule/Table/Table'
+import React, {FC, useEffect, useState} from 'react'
+
 import ScheduleService from '../../api/ScheduleService'
-import {TTableDataList} from '../../types/schedule'
 import {settingsStore} from '../../store/settingsStore'
+import {TTableDataList} from '../../types/schedule'
+import Table from '../Schedule/Table/Table'
 import TableLoader from '../Schedule/TableLoader/TableLoader'
-import cl from './Teacher.module.scss'
+import SelectInput from '../UIKit/SelectInput/SelectInput'
+
 import {TEACHERS} from './constants'
+
+import cl from './Teacher.module.scss'
 
 const scheduleService = new ScheduleService()
 
@@ -18,8 +21,10 @@ const Teacher: FC = () => {
     const fetchTeacherSchedule = async () => {
         try {
             const response = await scheduleService.getTeacherSchedule(settings.teacher)
+
             setTeacherSchedule(response)
         } catch (error) {
+            console.log('error',error)
         } finally {
             setIsLoader(false)
 
@@ -56,4 +61,5 @@ const Teacher: FC = () => {
         </div>
     )
 }
+
 export default observer(Teacher)

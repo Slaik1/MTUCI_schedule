@@ -28,10 +28,20 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "eslint -c .eslintrc --ext .ts,.tsx .",
-    "lint:fix": "npm run lint -- --fix"
+    "lint": "npm run stylelint && npm run eslint && npm run prettier:check",
+    "lint:fix": "npm run stylelint:fix && npm run eslint:fix && npm run prettier:fix",
+    "eslint": "eslint --cache --ext .ts,.tsx,.ts,.tsx src/ --color",
+    "eslint:fix": "eslint --ext .ts,.tsx,.ts,.tsx src/ --color --fix",
+    "prettier:check": "prettier --check \"./src/**/*.{js,jsx,json,ts,tsx}\"",
+    "prettier:fix": "prettier --write \"./src/**/*.{js,jsx,json,ts,tsx}\"",
+    "stylelint": "stylelint src/**/*{.scss,.css}",
+    "stylelint:fix": "stylelint src/**/*{.scss,.css} --fix"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [
@@ -46,6 +56,17 @@
     ]
   },
   "devDependencies": {
-    "@types/react-transition-group": "^4.4.8"
+    "@types/react-transition-group": "^4.4.8",
+    "eslint": "^8.48.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-react": "^7.33.2",
+    "prettier": "^3.1.1",
+    "stylelint": "^14.16.1",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-rational-order": "^0.0.4",
+    "stylelint-config-standard": "^24.0.0",
+    "stylelint-config-standard-scss": "^2.0.1",
+    "stylelint-order": "^5.0.0",
+    "stylelint-prettier": "^2.0.0"
   }
 }
