@@ -10,7 +10,7 @@ import SelectInput from '../UIKit/SelectInput/SelectInput';
 
 import { TEACHERS } from './constants';
 
-import cl from './Teacher.module.scss';
+import styles from './Teacher.module.scss';
 
 const scheduleService = new ScheduleService();
 
@@ -37,9 +37,9 @@ const Teacher: FC = () => {
   }, [settings.teacher, settings.setTodayStart]);
 
   return (
-    <div className={cl.wrapper}>
+    <div className={styles.wrapper}>
       <SelectInput
-        className={cl.input}
+        className={styles.input}
         options={TEACHERS}
         value={settings.teacher}
         setValue={(value) => setSettingsItem('teacher', String(value))}

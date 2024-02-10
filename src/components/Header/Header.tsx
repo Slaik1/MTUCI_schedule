@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import { ReactSVG } from 'react-svg';
@@ -9,7 +9,9 @@ import Settings from '../Settings/Settings';
 import SidePanel from '../SidePanel/SidePanel';
 import Modal from '../UIKit/Modal/Modal';
 
-import cl from './Header.module.scss';
+import Logo from './Logo/Logo';
+
+import styles from './Header.module.scss';
 
 const Header: FC = () => {
   const { theme, setTheme } = useTheme();
@@ -23,15 +25,9 @@ const Header: FC = () => {
   };
 
   return (
-    <header className={cl.header}>
-      <Link to="/" className={cl.logoWrapper}>
-        <ReactSVG src="svg/header_logo.svg" />
-        <div className={cl.title}>
-          <h1>СКФ МТУСИ</h1>
-          <p>Расписание</p>
-        </div>
-      </Link>
-      <ul className={cl.linksList}>
+    <header className={styles.header}>
+      <Logo />
+      <ul className={styles.linksList}>
         <li>
           <Link to="/teacher">Преподаватели</Link>
         </li>
@@ -45,7 +41,7 @@ const Header: FC = () => {
       </ul>
       <ReactSVG
         onClick={() => setIsSidePanelOpen(true)}
-        className={cl.burger}
+        className={styles.burger}
         src="svg/header_burger.svg"
       />
       {isSettingsOpen &&

@@ -1,11 +1,11 @@
 import React from 'react';
 import ContentLoader from 'react-content-loader';
 
-import cl from './TableLoader.module.scss';
+import styles from './TableLoader.module.scss';
 
 const MyLoader = () => (
   <ContentLoader
-    className={cl.loader}
+    className={styles.loader}
     speed={2}
     backgroundColor="var(--bg-component)"
     foregroundColor="var(--bg)"

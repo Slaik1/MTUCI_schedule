@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React, { FC } from 'react';
 
-import cl from './SwitchBtn.module.scss';
+import styles from './SwitchBtn.module.scss';
 
 interface SwitchBtnProps {
   value: boolean;
@@ -10,8 +10,8 @@ interface SwitchBtnProps {
 
 const SwitchBtn: FC<SwitchBtnProps> = ({ value, setValue }) => {
   const inputClasses = classNames({
-    [cl.switch]: true,
-    [cl.active]: value,
+    [styles.switch]: true,
+    [styles.active]: value,
   });
 
   const labelClickHandler = (event: React.MouseEvent<HTMLDivElement>) => {

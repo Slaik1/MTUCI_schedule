@@ -10,7 +10,7 @@ import { TTable } from '../../../types/schedule';
 import { getCurrentDate } from './constants';
 import Row from './Row/Row';
 
-import cl from './Table.module.scss';
+import styles from './Table.module.scss';
 
 import './animation.scss';
 
@@ -36,19 +36,19 @@ const Table: FC<TableProps> = ({ scheduleData }) => {
   };
 
   const inputClasses = classNames({
-    [cl.wrapper]: true,
-    [cl.headerOpen]: isAdditionalInfo,
-    [cl.today]: highlightToday && isToday,
+    [styles.wrapper]: true,
+    [styles.headerOpen]: isAdditionalInfo,
+    [styles.today]: highlightToday && isToday,
   });
 
   return (
     <div className={inputClasses}>
       <div
-        className={cl.header}
+        className={styles.header}
         onClick={() => setIsAdditionalInfo((prev) => !prev)}
       >
         {isAdditionalInfo ? (
-          <div className={cl.titleWrapper}>
+          <div className={styles.titleWrapper}>
             <p>Пара</p>
             <p>Дисциплина</p>
             <p>Вид</p>
@@ -61,7 +61,7 @@ const Table: FC<TableProps> = ({ scheduleData }) => {
             <p>Кабинет</p>
           </div>
         ) : (
-          <div className={cl.titleWrapper}>
+          <div className={styles.titleWrapper}>
             <p>{scheduleData[0].date}</p>
             <p>{scheduleData[0].day}</p>
             <p>
@@ -75,7 +75,7 @@ const Table: FC<TableProps> = ({ scheduleData }) => {
                 ''
               )}
             </p>
-            <ReactSVG className={cl.openBtn} src="./svg/input_arrow.svg" />
+            <ReactSVG className={styles.openBtn} src="./svg/input_arrow.svg" />
           </div>
         )}
       </div>
