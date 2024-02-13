@@ -1,13 +1,13 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { ReactSVG } from 'react-svg';
 
-import cl from './AboutProject.module.scss';
+import styles from './AboutProject.module.scss';
 
 const AboutProject: FC = () => {
   return (
-    <div className={cl.wrapper}>
+    <div className={styles.wrapper}>
       <h1>О проекте</h1>
-      <p className={cl.text}>
+      <p className={styles.text}>
         Данный web сервис разработан для упрощения просмотра расписания пар
         университета СКФ МТУСИ. Если вы увидели некорректную работу сообщите о
         ней. Это улучшит работу сайта.
@@ -15,7 +15,7 @@ const AboutProject: FC = () => {
       <a href="https://github.com/Slaik1/MTUCI_schedule/issues">
         Сообщить об ошибке
       </a>
-      <div className={cl.icons}>
+      <div className={styles.icons}>
         <ReactSVG src="./svg/about/react.svg" />
         <ReactSVG src="./svg/about/typescript.svg" />
         <ReactSVG src="./svg/about/mobx.svg" />

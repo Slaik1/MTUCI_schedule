@@ -10,7 +10,7 @@ import { TTable } from '../../../types/schedule';
 import { getCurrentDate } from './constants';
 import Row from './Row/Row';
 
-import cl from './Table.module.scss';
+import styles from './Table.module.scss';
 
 import './animation.scss';
 
@@ -36,46 +36,63 @@ const Table: FC<TableProps> = ({ scheduleData }) => {
   };
 
   const inputClasses = classNames({
-    [cl.wrapper]: true,
-    [cl.headerOpen]: isAdditionalInfo,
-    [cl.today]: highlightToday && isToday,
+    [styles.wrapper]: true,
+    [styles.headerOpen]: isAdditionalInfo,
+    [styles.today]: highlightToday && isToday,
+  });
+
+  const headerStyles = classNames({
+    [styles.header]: true,
+    [styles.headerAdditionalInfo]:
+      isAdditionalInfo || scheduleData[0].changeStatus,
+  });
+
+  const changesStyles = classNames({
+    [styles.changes]: true,
+    [styles.changesIsToday]: isToday,
   });
 
   return (
     <div className={inputClasses}>
       <div
-        className={cl.header}
+        className={styles.additionalInfo}
+        onClick={() => setIsAdditionalInfo((prev) => !prev)}
+      >
+        {isAdditionalInfo && (
+          <p className={styles.date}>{scheduleData[0].date}</p>
+        )}
+
+        {scheduleData[0].changeStatus && !isAdditionalInfo && (
+          <p className={changesStyles}>Изменения</p>
+        )}
+      </div>
+
+      <div
+        className={headerStyles}
         onClick={() => setIsAdditionalInfo((prev) => !prev)}
       >
         {isAdditionalInfo ? (
-          <div className={cl.titleWrapper}>
+          <div className={styles.titleWrapper}>
             <p>Пара</p>
             <p>Дисциплина</p>
             <p>Вид</p>
             {window.location.pathname === '/teacher' ? (
               <p>Группа</p>
             ) : (
-              <p>Препод</p>
+              <p>Преподаватель</p>
             )}
 
             <p>Кабинет</p>
           </div>
         ) : (
-          <div className={cl.titleWrapper}>
+          <div className={styles.titleWrapper}>
             <p>{scheduleData[0].date}</p>
             <p>{scheduleData[0].day}</p>
             <p>
               {scheduleData[0].lesson} пара в {scheduleData[0].room} кабинете
             </p>
-            <p>
-              {scheduleData[0].discipline}
-              {scheduleData[0].changeStatus ? (
-                <span>&nbsp;Изменения!</span>
-              ) : (
-                ''
-              )}
-            </p>
-            <ReactSVG className={cl.openBtn} src="./svg/input_arrow.svg" />
+            <p>{scheduleData[0].discipline}</p>
+            <ReactSVG className={styles.openBtn} src="./svg/input_arrow.svg" />
           </div>
         )}
       </div>

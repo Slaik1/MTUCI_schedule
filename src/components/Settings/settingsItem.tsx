@@ -5,7 +5,7 @@ import { settingsStore } from '../../store/settingsStore';
 import { ISettings } from '../../types/settings';
 import SwitchBtn from '../UIKit/SwitchBtn/SwitchBtn';
 
-import cl from './Settings.module.scss';
+import styles from './Settings.module.scss';
 
 export interface SettingsItemProps {
   title: string;
@@ -18,7 +18,7 @@ const SettingsItem: FC<SettingsItemProps> = (props) => {
   const { setSettingsItem, settings } = settingsStore;
 
   return (
-    <div className={cl.setting}>
+    <div className={styles.setting}>
       {title}
       <SwitchBtn
         setValue={(value) => setSettingsItem(storeKey, value)}

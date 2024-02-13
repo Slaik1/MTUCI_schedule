@@ -3,7 +3,7 @@ import React, { FC, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ReactSVG } from 'react-svg';
 
-import cl from './SidePanel.module.scss';
+import styles from './SidePanel.module.scss';
 
 interface SidePanelProps {
   isOpen: boolean;
@@ -34,8 +34,8 @@ const SidePanel: FC<SidePanelProps> = ({
   }, []);
 
   const inputClasses = classNames({
-    [cl.container]: isOpen,
-    [cl.active]: isOpen,
+    [styles.container]: isOpen,
+    [styles.active]: isOpen,
   });
   const closePanel = (event?: React.MouseEvent) => {
     event && event.stopPropagation();
@@ -54,7 +54,10 @@ const SidePanel: FC<SidePanelProps> = ({
 
   return (
     <div className={inputClasses} onClick={(event) => closePanel(event)}>
-      <div className={cl.wrapper} onClick={(event) => event.stopPropagation()}>
+      <div
+        className={styles.wrapper}
+        onClick={(event) => event.stopPropagation()}
+      >
         <ul>
           <li onClick={(event) => closePanel(event)}>
             <Link to="/teacher">
@@ -71,13 +74,13 @@ const SidePanel: FC<SidePanelProps> = ({
           </li>
           {theme === 'light' ? (
             <ReactSVG
-              className={cl.theme}
+              className={styles.theme}
               src="svg/header_moon.svg"
               onClick={changeTheme}
             />
           ) : (
             <ReactSVG
-              className={cl.theme}
+              className={styles.theme}
               src="svg/header_sun.svg"
               onClick={changeTheme}
             />

@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import ScheduleService from '../../api/ScheduleService';
 import { settingsStore } from '../../store/settingsStore';
@@ -8,7 +8,7 @@ import { TTableDataList } from '../../types/schedule';
 import Table from './Table/Table';
 import TableLoader from './TableLoader/TableLoader';
 
-import cl from './Schedule.module.scss';
+import styles from './Schedule.module.scss';
 
 const scheduleService = new ScheduleService();
 
@@ -35,8 +35,8 @@ const Schedule = () => {
   }, [group, scheduleLength, hideAdditionalTeacher, setTodayStart]);
 
   return (
-    <div className={cl.wrapper}>
-      <div className={cl.container}>
+    <div className={styles.wrapper}>
+      <div className={styles.container}>
         {scheduleDataList ? (
           scheduleDataList.map((el, i) => <Table scheduleData={el} key={i} />)
         ) : (

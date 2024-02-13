@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 import { TOptions } from '../selectInput.model';
 
-import cl from './DropList.module.scss';
+import styles from './DropList.module.scss';
 
 interface DropListProps {
   dropListData: TOptions;
@@ -12,11 +12,11 @@ interface DropListProps {
 
 const DropList: FC<DropListProps> = ({ dropListData, setValue, value }) => {
   return (
-    <div className={cl.dropList}>
+    <div className={styles.dropList}>
       {dropListData.map((el, i) => (
         <div
           key={i}
-          className={`${cl.dropItem} + ${value === el.value ? cl.active : ''}`} // нужен classnames
+          className={`${styles.dropItem} + ${value === el.value ? styles.active : ''}`} // нужен classnames
           onClick={() => setValue(el)}
         >
           {el.label}

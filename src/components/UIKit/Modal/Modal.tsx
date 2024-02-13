@@ -1,6 +1,6 @@
 import React, { FC, ReactNode, useEffect } from 'react';
 
-import cl from './Modal.module.scss';
+import styles from './Modal.module.scss';
 
 interface ModalProps {
   children: ReactNode;
@@ -23,8 +23,11 @@ const Modal: FC<ModalProps> = ({ children, setIsOpen, resetData }) => {
   };
 
   return (
-    <div className={cl.wrapper} onClick={(event) => closeModal(event)}>
-      <div className={cl.modal} onClick={(event) => event.stopPropagation()}>
+    <div className={styles.wrapper} onClick={(event) => closeModal(event)}>
+      <div
+        className={styles.modal}
+        onClick={(event) => event.stopPropagation()}
+      >
         {children}
       </div>
     </div>

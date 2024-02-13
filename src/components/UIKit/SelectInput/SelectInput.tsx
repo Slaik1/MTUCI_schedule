@@ -7,7 +7,7 @@ import { useOutsideClick } from '../../../hooks/useOutsideClick';
 import DropList from './DropList/DropList';
 import { IOption, TOptions } from './selectInput.model';
 
-import cl from './SelectInput.module.scss';
+import styles from './SelectInput.module.scss';
 
 interface SelectInputProps {
   className?: string;
@@ -28,9 +28,9 @@ const SelectInput: FC<SelectInputProps> = ({
   const ref = useOutsideClick(() => setIsInputActive(false));
 
   const inputClasses = classNames({
-    [cl.wrapper]: true,
+    [styles.wrapper]: true,
     [className]: !!className,
-    [cl.active]: isInputActive,
+    [styles.active]: isInputActive,
   });
 
   const setGlobalValue = (el: IOption) => setValue(el.value);
@@ -40,15 +40,15 @@ const SelectInput: FC<SelectInputProps> = ({
   };
 
   return (
-    <div className={cl.container}>
-      <p className={cl.title}>{title}</p>
+    <div className={styles.container}>
+      <p className={styles.title}>{title}</p>
       <div
         ref={ref}
         className={inputClasses}
         onClick={() => setIsInputActive((prev) => !prev)}
       >
-        <p className={cl.input}>{getCurrentLabel()}</p>
-        <ReactSVG className={cl.svgArrow} src="./svg/input_arrow.svg" />
+        <p className={styles.input}>{getCurrentLabel()}</p>
+        <ReactSVG className={styles.svgArrow} src="./svg/input_arrow.svg" />
         {isInputActive && (
           <DropList
             value={value}
