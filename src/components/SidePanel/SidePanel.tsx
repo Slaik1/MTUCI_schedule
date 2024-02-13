@@ -54,7 +54,10 @@ const SidePanel: FC<SidePanelProps> = ({
 
   return (
     <div className={inputClasses} onClick={(event) => closePanel(event)}>
-      <div className={styles.wrapper} onClick={(event) => event.stopPropagation()}>
+      <div
+        className={styles.wrapper}
+        onClick={(event) => event.stopPropagation()}
+      >
         <ul>
           <li onClick={(event) => closePanel(event)}>
             <Link to="/teacher">

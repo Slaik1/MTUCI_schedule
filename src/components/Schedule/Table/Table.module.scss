@@ -1,15 +1,39 @@
 .wrapper {
   width: 100%;
+  background: var(--bg-component);
   margin-bottom: 20px;
+  border-radius: 3px;
+
+  .additionalInfo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+
+    .changes {
+      color: var(--aditional);
+      margin-top: 4px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .changesIsToday {
+      color: var(--font-color);
+    }
+
+    .date {
+      margin-top: 4px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
 
   .header {
     width: 100%;
-    background: var(--bg-component);
     padding: 20px 0;
     font-size: 18px;
     text-align: start;
     cursor: pointer;
-    border-radius: 3px;
 
     &:hover {
       svg {
@@ -66,8 +90,9 @@
 }
 
 .headerOpen {
+  background: var(--bg-component-hover);
+
   .header {
-    background: var(--bg-component-hover);
     font-weight: 500;
     border-radius: 3px 3px 0 0;
 
@@ -85,15 +110,17 @@
   }
 }
 
-.today {
-  .header {
-    color: var(--bg-component);
-    background: var(--aditional);
+.headerAdditionalInfo {
+  padding: 5px 0 20px !important;
+}
 
-    &:hover {
-      svg {
-        fill: var(--bg-component) !important;
-      }
+.today {
+  color: var(--bg-component);
+  background: var(--aditional);
+
+  &:hover {
+    svg {
+      fill: var(--bg-component) !important;
     }
   }
 }

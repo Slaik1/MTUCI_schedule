@@ -41,10 +41,34 @@ const Table: FC<TableProps> = ({ scheduleData }) => {
     [styles.today]: highlightToday && isToday,
   });
 
+  const headerStyles = classNames({
+    [styles.header]: true,
+    [styles.headerAdditionalInfo]:
+      isAdditionalInfo || scheduleData[0].changeStatus,
+  });
+
+  const changesStyles = classNames({
+    [styles.changes]: true,
+    [styles.changesIsToday]: isToday,
+  });
+
   return (
     <div className={inputClasses}>
       <div
-        className={styles.header}
+        className={styles.additionalInfo}
+        onClick={() => setIsAdditionalInfo((prev) => !prev)}
+      >
+        {isAdditionalInfo && (
+          <p className={styles.date}>{scheduleData[0].date}</p>
+        )}
+
+        {scheduleData[0].changeStatus && !isAdditionalInfo && (
+          <p className={changesStyles}>Изменения</p>
+        )}
+      </div>
+
+      <div
+        className={headerStyles}
         onClick={() => setIsAdditionalInfo((prev) => !prev)}
       >
         {isAdditionalInfo ? (
@@ -55,7 +79,7 @@ const Table: FC<TableProps> = ({ scheduleData }) => {
             {window.location.pathname === '/teacher' ? (
               <p>Группа</p>
             ) : (
-              <p>Препод</p>
+              <p>Преподаватель</p>
             )}
 
             <p>Кабинет</p>
@@ -67,14 +91,7 @@ const Table: FC<TableProps> = ({ scheduleData }) => {
             <p>
               {scheduleData[0].lesson} пара в {scheduleData[0].room} кабинете
             </p>
-            <p>
-              {scheduleData[0].discipline}
-              {scheduleData[0].changeStatus ? (
-                <span>&nbsp;Изменения!</span>
-              ) : (
-                ''
-              )}
-            </p>
+            <p>{scheduleData[0].discipline}</p>
             <ReactSVG className={styles.openBtn} src="./svg/input_arrow.svg" />
           </div>
         )}

@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import ScheduleService from '../../api/ScheduleService';
 import { settingsStore } from '../../store/settingsStore';

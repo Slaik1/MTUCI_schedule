@@ -24,7 +24,10 @@ const Modal: FC<ModalProps> = ({ children, setIsOpen, resetData }) => {
 
   return (
     <div className={styles.wrapper} onClick={(event) => closeModal(event)}>
-      <div className={styles.modal} onClick={(event) => event.stopPropagation()}>
+      <div
+        className={styles.modal}
+        onClick={(event) => event.stopPropagation()}
+      >
         {children}
       </div>
     </div>
