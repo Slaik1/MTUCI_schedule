@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { observer } from 'mobx-react-lite';
-import React, { FC, useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { ReactSVG } from 'react-svg';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
@@ -22,18 +22,16 @@ const Table: FC<TableProps> = ({ scheduleData }) => {
   const { settings } = settingsStore;
   const { expandAllDays, expandToday, highlightToday } = settings;
   const [isToday, setIsToday] = useState(false);
-  const [isAdditionalInfo, setIsAdditionalInfo] = useState(expandAllDays);
+  const [isAdditionalInfo, setIsAdditionalInfo] = useState(false);
 
   useEffect(() => {
     const date = getCurrentDate();
 
     setIsToday(scheduleData[0].date === date);
-    setIsAdditionalInfo(shouldExpand());
-  }, [scheduleData, expandToday, expandAllDays, highlightToday]);
 
-  const shouldExpand = (): boolean => {
-    return expandAllDays || (expandToday && isToday);
-  };
+    setIsAdditionalInfo(expandAllDays || (isToday && expandToday));
+  }, [scheduleData, expandToday, expandAllDays, highlightToday, isToday]);
+
 
   const inputClasses = classNames({
     [styles.wrapper]: true,
